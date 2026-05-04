@@ -1744,6 +1744,158 @@ const DRUGS = [
     ],
   },
   {
+    generic: "modafinil",
+    brands: ["Provigil", "Modavigil", "Alertec"],
+    aliases: [],
+    status: "permission",
+    label: "Psychotropic threshold applies",
+    category: "Psychotropic",
+    summary:
+      "Usually legal to bring in for personal use. Up to 6 g total modafinil can be carried without narcotics permission; above that, carry a doctor's certificate.",
+    details: [
+      "Modafinil appears in Japan's psychotropics quantity table with a 6 g threshold.",
+      "The NCD says psychotropics at or below the listed amount do not need permission or a doctor's certificate, unless they are injectable.",
+      "The NCD psychotropics guidance says that if you bring more than 1 month supply, contact yakkan@mhlw.go.jp.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Psychotropics Quantity Table", url: SOURCES.psychotropics },
+    ],
+  },
+  {
+    generic: "temazepam",
+    brands: ["Restoril"],
+    aliases: [],
+    status: "permission",
+    label: "Psychotropic threshold applies",
+    category: "Psychotropic",
+    summary:
+      "Usually legal to bring in for personal use. Up to 900 mg total temazepam can be carried without narcotics permission; above that, carry a doctor's certificate.",
+    details: [
+      "Temazepam appears in Japan's psychotropics quantity table with a 900 mg threshold.",
+      "The NCD says psychotropics at or below the listed amount do not need permission or a doctor's certificate, unless they are injectable.",
+      "The NCD psychotropics guidance says that if you bring more than 1 month supply, contact yakkan@mhlw.go.jp.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Psychotropics Quantity Table", url: SOURCES.psychotropics },
+    ],
+  },
+  {
+    generic: "triazolam",
+    brands: ["Halcion"],
+    aliases: [],
+    status: "permission",
+    label: "Psychotropic threshold applies",
+    category: "Psychotropic",
+    summary:
+      "Usually legal to bring in for personal use. Up to 15 mg total triazolam can be carried without narcotics permission; above that, carry a doctor's certificate.",
+    details: [
+      "Triazolam appears in Japan's psychotropics quantity table with a 15 mg threshold.",
+      "Because the threshold is small, even a modest supply can exceed the no-permission amount.",
+      "The NCD psychotropics guidance says that if you bring more than 1 month supply, contact yakkan@mhlw.go.jp.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Psychotropics Quantity Table", url: SOURCES.psychotropics },
+    ],
+  },
+  {
+    generic: "estazolam",
+    brands: ["ProSom"],
+    aliases: [],
+    status: "permission",
+    label: "Psychotropic threshold applies",
+    category: "Psychotropic",
+    summary:
+      "Usually legal to bring in for personal use. Up to 120 mg total estazolam can be carried without narcotics permission; above that, carry a doctor's certificate.",
+    details: [
+      "Estazolam appears in Japan's psychotropics quantity table with a 120 mg threshold.",
+      "The NCD says psychotropics at or below the listed amount do not need permission or a doctor's certificate, unless they are injectable.",
+      "The NCD psychotropics guidance says that if you bring more than 1 month supply, contact yakkan@mhlw.go.jp.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Psychotropics Quantity Table", url: SOURCES.psychotropics },
+    ],
+  },
+  {
+    generic: "oxazepam",
+    brands: ["Serax"],
+    aliases: [],
+    status: "permission",
+    label: "Psychotropic threshold applies",
+    category: "Psychotropic",
+    summary:
+      "Usually legal to bring in for personal use. Up to 2.7 g total oxazepam can be carried without narcotics permission; above that, carry a doctor's certificate.",
+    details: [
+      "Oxazepam appears in Japan's psychotropics quantity table with a 2.7 g threshold.",
+      "The NCD says psychotropics at or below the listed amount do not need permission or a doctor's certificate, unless they are injectable.",
+      "The NCD psychotropics guidance says that if you bring more than 1 month supply, contact yakkan@mhlw.go.jp.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Psychotropics Quantity Table", url: SOURCES.psychotropics },
+    ],
+  },
+  {
+    generic: "chlordiazepoxide",
+    brands: ["Librium"],
+    aliases: [],
+    status: "permission",
+    label: "Psychotropic threshold applies",
+    category: "Psychotropic",
+    summary:
+      "Usually legal to bring in for personal use. Up to 1.8 g total chlordiazepoxide can be carried without narcotics permission; above that, carry a doctor's certificate.",
+    details: [
+      "Chlordiazepoxide appears in Japan's psychotropics quantity table with a 1.8 g threshold.",
+      "The NCD says psychotropics at or below the listed amount do not need permission or a doctor's certificate, unless they are injectable.",
+      "The NCD psychotropics guidance says that if you bring more than 1 month supply, contact yakkan@mhlw.go.jp.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Psychotropics Quantity Table", url: SOURCES.psychotropics },
+    ],
+  },
+  {
+    generic: "clobazam",
+    brands: ["Onfi", "Frisium", "Sympazan"],
+    aliases: [],
+    status: "permission",
+    label: "Psychotropic threshold applies",
+    category: "Psychotropic",
+    summary:
+      "Usually legal to bring in for personal use. Up to 2.4 g total clobazam can be carried without narcotics permission; above that, carry a doctor's certificate.",
+    details: [
+      "Clobazam appears in Japan's psychotropics quantity table with a 2.4 g threshold.",
+      "The NCD says psychotropics at or below the listed amount do not need permission or a doctor's certificate, unless they are injectable.",
+      "The NCD psychotropics guidance says that if you bring more than 1 month supply, contact yakkan@mhlw.go.jp.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Psychotropics Quantity Table", url: SOURCES.psychotropics },
+    ],
+  },
+  {
+    generic: "flurazepam",
+    brands: ["Dalmane"],
+    aliases: [],
+    status: "permission",
+    label: "Psychotropic threshold applies",
+    category: "Psychotropic",
+    summary:
+      "Usually legal to bring in for personal use. Up to 900 mg total flurazepam can be carried without narcotics permission; above that, carry a doctor's certificate.",
+    details: [
+      "Flurazepam appears in Japan's psychotropics quantity table with a 900 mg threshold.",
+      "The NCD says psychotropics at or below the listed amount do not need permission or a doctor's certificate, unless they are injectable.",
+      "The NCD psychotropics guidance says that if you bring more than 1 month supply, contact yakkan@mhlw.go.jp.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Psychotropics Quantity Table", url: SOURCES.psychotropics },
+    ],
+  },
+  {
     generic: "pseudoephedrine",
     brands: ["Sudafed", "Claritin-D", "Allegra-D", "Zyrtec-D", "Mucinex D"],
     aliases: [],
@@ -2564,6 +2716,23 @@ const DRUGS = [
     sources: MHLW_SOURCES,
   },
   {
+    generic: "somatropin injection",
+    brands: ["Genotropin", "Norditropin", "Omnitrope", "Humatrope", "Saizen"],
+    aliases: ["human growth hormone", "hgh", "growth hormone injection"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable hormone therapy medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Growth-hormone injections generally follow MHLW's 1 month injectable-drug limit.",
+    details: [
+      "Somatropin is not listed in the controlled-substances sources used in this app.",
+      "Because it is an injectable medicine, the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep pens, cartridges, cooler packs, and pharmacy labels together when possible.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
     generic: "gonadotropin fertility injection",
     brands: ["Gonal-f", "Follistim AQ", "Menopur", "Ovidrel", "Pregnyl"],
     aliases: ["fsh injection", "hcg trigger shot", "fertility shot", "ovulation trigger injection"],
@@ -2936,6 +3105,199 @@ const DRUGS = [
       "Creatine is not listed in the controlled-substances sources used in this app.",
       "Pre-workout or performance formulas can add caffeine or many other ingredients, so a plain creatine product is easier to match.",
       "Original packaging helps clarify that the product is a sports supplement.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "pre-workout supplement",
+    brands: ["C4", "Bucked Up", "Legion Pulse", "Ghost Legend", "Six Star Pre-Workout"],
+    aliases: ["pre workout", "pump formula", "energy formula"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but pre-workout formulas vary widely and should be checked by exact ingredient list.",
+    details: [
+      "Pre-workout products are not listed by brand in the controlled-substances sources used in this app.",
+      "Many formulas combine caffeine, beta-alanine, citrulline, creatine, vitamins, and herbal blends in one tub.",
+      "If your formula includes a stimulant, yohimbine, or another specialty ingredient, verify the exact label rather than relying on the marketing name.",
+      "Keep tubs or single-serve packets in original packaging so the ingredient panel is easy to show if needed.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "branched-chain amino acids",
+    brands: ["XTEND", "Optimum Nutrition BCAA", "MusclePharm BCAA"],
+    aliases: ["bcaa", "leucine isoleucine valine"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but flavored amino-acid formulas can include additional ingredients.",
+    details: [
+      "Plain BCAA products are not listed in the controlled-substances sources used in this app.",
+      "Some products add caffeine, electrolytes, nootropics, or performance blends beyond the amino acids themselves.",
+      "Use the exact label if the product is sold as an intra-workout or recovery drink rather than a plain amino-acid powder.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "beta-alanine",
+    brands: ["NOW Beta-Alanine", "Nutricost Beta-Alanine", "BulkSupplements Beta-Alanine"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Beta-alanine is not listed in the controlled-substances sources used in this app.",
+      "Standalone beta-alanine powders and capsules are usually straightforward compared with multi-ingredient pre-workout formulas.",
+      "Keep the original labeled tub or bag when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "citrulline malate",
+    brands: ["Nutricost Citrulline Malate", "BulkSupplements Citrulline Malate"],
+    aliases: ["l-citrulline", "citrulline"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Citrulline products are not listed in the controlled-substances sources used in this app.",
+      "Pump formulas often mix citrulline with stimulants or other workout ingredients, so the exact label still matters.",
+      "Plain single-ingredient products are easiest to match and explain.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "glutamine",
+    brands: ["Optimum Nutrition Glutamine", "MuscleTech Platinum Glutamine", "BulkSupplements Glutamine"],
+    aliases: ["l-glutamine"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Glutamine is not listed in the controlled-substances sources used in this app.",
+      "Recovery formulas can combine glutamine with other amino acids, electrolytes, or herbal ingredients.",
+      "Keep the original label if the product is part of a broader recovery blend.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "l-carnitine",
+    brands: ["NOW L-Carnitine", "Nutricost L-Carnitine", "GNC L-Carnitine"],
+    aliases: ["carnitine", "acetyl-l-carnitine", "alcar"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but sports and weight-management blends can vary by formula.",
+    details: [
+      "L-carnitine is not listed in the controlled-substances sources used in this app.",
+      "Some products combine it with caffeine, green-tea extract, or other stimulant ingredients.",
+      "The exact label matters more when the product is marketed as fat-burning or energy support rather than as plain carnitine.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "mass gainer",
+    brands: ["Optimum Nutrition Serious Mass", "Dymatize Super Mass Gainer", "MuscleTech Mass Tech"],
+    aliases: ["weight gainer", "gainer powder"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but mass-gainer products are complex formulas and should be checked by exact label.",
+    details: [
+      "Mass gainers are not listed in the controlled-substances sources used in this app.",
+      "These products often combine protein, carbohydrates, creatine, vitamins, and other specialty ingredients.",
+      "If the formula also includes stimulant or hormone-marketing ingredients, verify the exact ingredient list before relying on the brand-name match.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "caffeine supplement",
+    brands: ["ProLab Caffeine", "Nutricost Caffeine", "Vivarin"],
+    aliases: ["caffeine pills", "caffeine anhydrous"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but concentrated stimulant formulas should be checked by exact label.",
+    details: [
+      "Caffeine is not listed in the controlled-substances sources used in this app.",
+      "Plain caffeine tablets are different from pre-workout or fat-burner products that add many other stimulatory ingredients.",
+      "Keep the original bottle or box when possible so the dose per serving is visible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "nitric oxide booster",
+    brands: ["N.O.-Xplode", "Jacked Factory Nitrosurge", "Gorilla Mode Nitric"],
+    aliases: ["pump supplement", "nitric oxide supplement"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but nitric-oxide or pump supplements vary a lot by ingredient list.",
+    details: [
+      "These products are not listed by brand in the controlled-substances sources used in this app.",
+      "Common ingredients include citrulline, arginine, beetroot, and other pump blends, but some versions also add stimulants or specialty compounds.",
+      "Use the exact ingredient panel rather than relying on the product line name alone.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "testosterone booster supplement",
+    brands: ["Testogen", "Prime Male", "Animal Test"],
+    aliases: ["natural testosterone booster", "test booster"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but testosterone-booster supplements vary widely and should be checked by exact ingredient list.",
+    details: [
+      "These products are not listed by brand in the controlled-substances sources used in this app.",
+      "Many formulas are just blends of herbs, minerals, and vitamins, but the exact ingredients can vary significantly from brand to brand.",
+      "Do not confuse a supplement marketed as a testosterone booster with prescription testosterone medicine, which follows different rules.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "sarm / research-chemical bodybuilding product",
+    brands: ["Ostarine", "Ligandrol", "RAD-140", "MK-677", "Cardarine"],
+    aliases: ["sarm", "sarms", "research chemical", "bodybuilding research compound"],
+    status: "allowed",
+    label: "High caution: verify the exact ingredient directly",
+    category: "Specialty performance product",
+    summary:
+      "Do not rely on the product name alone. These products vary widely, may not be ordinary supplements or approved medicines, and should be checked by exact ingredient before travel.",
+    details: [
+      "The app's official Japan sources regulate substances by ingredient, not by bodybuilding marketing labels.",
+      "Products sold as SARMs or research chemicals can differ substantially by the exact compound, strength, and legal classification.",
+      "Bring the exact ingredient name, package photo, and source documents if you want to verify one of these products before travel.",
+    ],
+    sources: CONTROLLED_SOURCES,
+  },
+  {
+    generic: "methylene blue",
+    brands: ["methylene blue"],
+    aliases: ["methylthioninium chloride", "methylthioninium"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula and use",
+    category: "Specialty supplement or medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use, but methylene blue products vary by formulation and intended use, so the exact label matters.",
+    details: [
+      "Methylene blue is not listed in the controlled-substances sources used in this app.",
+      "Products sold as wellness, nootropic, aquarium, lab, or compounded formulations are not all the same thing, so only rely on clearly labeled personal-use products.",
+      "Keep the original packaging or pharmacy label so the exact ingredient strength and intended use are easy to show if needed.",
     ],
     sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
   },
