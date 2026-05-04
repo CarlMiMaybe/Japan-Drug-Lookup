@@ -8,6 +8,10 @@ const SOURCES = {
 };
 
 const MHLW_SOURCES = [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }];
+const CONTROLLED_SOURCES = [
+  { label: "NCD Application Guidance", url: SOURCES.ncd },
+  { label: "Controlled Substances List", url: SOURCES.controlledList },
+];
 const STANDARD_PRESCRIPTION_SUMMARY =
   "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.";
 const STANDARD_PRESCRIPTION_LIMIT_DETAIL =
@@ -37,6 +41,30 @@ function createAllowedEntry({
     summary,
     details,
     sources,
+  };
+}
+
+function createNarcoticPermissionEntry({
+  generic,
+  brands = [],
+  aliases = [],
+  summary = `Legal only with advance permission before entering Japan. ${capitalize(generic)} is listed as a narcotic in Japan.`,
+  details = [
+    `${capitalize(generic)} appears in the Controlled Substances List as a narcotic.`,
+    "The NCD says narcotics require advance permission before you enter Japan.",
+    "Travelers should apply before travel and carry the permit with the medicine at customs.",
+  ],
+}) {
+  return {
+    generic,
+    brands,
+    aliases,
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary,
+    details,
+    sources: CONTROLLED_SOURCES,
   };
 }
 
@@ -1204,6 +1232,46 @@ const DRUGS = [
       { label: "Controlled Substances List", url: SOURCES.controlledList },
     ],
   },
+  createNarcoticPermissionEntry({
+    generic: "acethylmethadol",
+    aliases: ["acetylmethadol"],
+  }),
+  createNarcoticPermissionEntry({
+    generic: "acetorphine",
+  }),
+  createNarcoticPermissionEntry({
+    generic: "acetylfentanyl",
+  }),
+  createNarcoticPermissionEntry({
+    generic: "acrylfentanyl",
+    aliases: ["acryloylfentanyl"],
+  }),
+  createNarcoticPermissionEntry({
+    generic: "ah-7921",
+  }),
+  createNarcoticPermissionEntry({
+    generic: "allylprodine",
+  }),
+  createNarcoticPermissionEntry({
+    generic: "benzethidine",
+  }),
+  createNarcoticPermissionEntry({
+    generic: "brorphine",
+  }),
+  createNarcoticPermissionEntry({
+    generic: "butonitazene",
+  }),
+  createNarcoticPermissionEntry({
+    generic: "butyrylfentanyl",
+    aliases: ["butyrlfentanyl"],
+  }),
+  createNarcoticPermissionEntry({
+    generic: "carfentanil",
+    aliases: ["carfentanyl", "4-carbomethoxyfentanyl"],
+  }),
+  createNarcoticPermissionEntry({
+    generic: "clonitazene",
+  }),
   {
     generic: "tramadol",
     brands: ["Ultram", "ConZip", "Qdolo"],
