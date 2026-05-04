@@ -653,6 +653,196 @@ const DRUGS = [
     ],
   },
   {
+    generic: "alfentanil",
+    brands: ["Alfenta"],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Alfentanil is listed as a narcotic in Japan.",
+    details: [
+      "The Controlled Substances List includes alfentanil as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "Travelers should carry the medicine themselves and show the permit at customs.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "anileridine",
+    brands: ["Leritine"],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Anileridine is listed as a narcotic in Japan.",
+    details: [
+      "The Controlled Substances List includes anileridine as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "If you are traveling with an older or uncommon opioid, match the exact ingredient rather than relying on familiarity with the brand.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "bezitramide",
+    brands: ["Burgodin"],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Bezitramide is listed as a narcotic in Japan.",
+    details: [
+      "The Controlled Substances List includes bezitramide as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "Older or non-U.S. opioid products should be checked by exact ingredient and dosage form before travel.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "dihydrocodeine",
+    brands: ["DHC Continus"],
+    aliases: [],
+    status: "permission",
+    label: "Variation warning: some low-strength products may be excluded",
+    category: "Narcotic",
+    summary:
+      "Usually treat dihydrocodeine products as requiring advance permission before entering Japan unless the exact formulation clearly falls under the exclusion shown in the controlled-substances list.",
+    details: [
+      "The Controlled Substances List includes dihydrocodeine as a narcotic, with an exclusion note for substances containing 1% or less of dihydrocodeine or its salt.",
+      "Because formulation details matter, travelers should not rely on the product name alone.",
+      "If the exact product does not clearly fit the exclusion, use the narcotics-permit approach before travel.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "diphenoxylate",
+    brands: ["Lomotil", "Lonox"],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Diphenoxylate is listed as a narcotic in Japan.",
+    details: [
+      "The Controlled Substances List includes diphenoxylate as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "Combination antidiarrheal products still follow the diphenoxylate rule when that controlled ingredient is present.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "dipipanone",
+    brands: ["Diconal"],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Dipipanone is listed as a narcotic in Japan.",
+    details: [
+      "The Controlled Substances List includes dipipanone as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "Travelers should verify the exact ingredient list for combination opioid products before relying on a brand-name match.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "furanylfentanyl",
+    brands: [],
+    aliases: ["furan fentanyl"],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Treat furanylfentanyl as a narcotic requiring advance permission before entering Japan.",
+    details: [
+      "The Controlled Substances List includes furanylfentanyl as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "Because fentanyl analogs are high-risk and easy to misidentify, travelers should not carry them without exact documentation and prior approval.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "hydromorphinol",
+    brands: [],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Hydromorphinol is listed as a narcotic in Japan.",
+    details: [
+      "The Controlled Substances List includes hydromorphinol as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "For uncommon opioid derivatives, use the exact ingredient name and carry supporting medical documentation.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "isomethadone",
+    brands: [],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Isomethadone is listed as a narcotic in Japan.",
+    details: [
+      "The Controlled Substances List includes isomethadone as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "Methadone-related opioids should be checked by exact ingredient name because similar names can have different Japan treatment.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "ketobemidone",
+    brands: ["Ketogan"],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Ketobemidone is listed as a narcotic in Japan.",
+    details: [
+      "The Controlled Substances List includes ketobemidone as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "This is another example of an uncommon opioid where the exact ingredient matters more than brand familiarity.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
     generic: "tramadol",
     brands: ["Ultram", "ConZip", "Qdolo"],
     aliases: [],
@@ -690,7 +880,7 @@ const DRUGS = [
   {
     generic: "semaglutide",
     brands: ["Ozempic", "Wegovy", "Rybelsus"],
-    aliases: [],
+    aliases: ["glp-1"],
     status: "allowed",
     label: "Usually allowed",
     category: "General or injectable medicine",
@@ -700,6 +890,550 @@ const DRUGS = [
       "Ozempic and Wegovy are injections, so the 1 month injectable rule is the safer default.",
       "Rybelsus is an oral medicine, so the usual prescription-drug quantity rule applies.",
       "If you plan to bring more than the exempt amount, apply for Import Confirmation before travel.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "tirzepatide",
+    brands: ["Mounjaro", "Zepbound"],
+    aliases: ["glp-1 gip"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Tirzepatide injections generally follow MHLW's 1 month injectable limit.",
+    details: [
+      "Mounjaro and Zepbound are injection products, so the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Carry the product in original labeled packaging when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "liraglutide",
+    brands: ["Victoza", "Saxenda"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Liraglutide injections generally follow MHLW's 1 month injectable limit.",
+    details: [
+      "Victoza and Saxenda are injection products, so the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep pens and original packaging together when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "dulaglutide",
+    brands: ["Trulicity"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Dulaglutide injections generally follow MHLW's 1 month injectable limit.",
+    details: [
+      "Trulicity is an injection product, so the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Carry the product in original labeled packaging when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "exenatide",
+    brands: ["Byetta", "Bydureon BCise"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Exenatide injections generally follow MHLW's 1 month injectable limit.",
+    details: [
+      "Byetta and Bydureon BCise are injection products, so the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Check the exact device and keep it in original packaging when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "multivitamin",
+    brands: ["Centrum", "One A Day", "Nature Made Multi"],
+    aliases: ["daily multivitamin"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but multivitamin formulas vary and should not contain a separate controlled ingredient.",
+    details: [
+      "Multivitamins are not listed in the controlled-substances sources used in this app.",
+      "Different formulas can add herbal blends, caffeine, or other specialty ingredients, so check the exact label.",
+      "Keep supplements in original packaging so the ingredient list is easy to show if needed.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "vitamin c",
+    brands: ["Emergen-C", "Airborne", "Nature Made Vitamin C"],
+    aliases: ["ascorbic acid"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Vitamin C is not listed in the controlled-substances sources used in this app.",
+      "Check combination immune-support products carefully because they can add multiple extra ingredients.",
+      "Original packaging helps show the formula and intended use.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "vitamin d3",
+    brands: ["Nature Made Vitamin D3", "Vitafusion Vitamin D3"],
+    aliases: ["cholecalciferol"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Vitamin D3 is not listed in the controlled-substances sources used in this app.",
+      "Some bone-health formulas add calcium, magnesium, or vitamin K, so match the exact product if searching by brand.",
+      "Keep supplements in their labeled container when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "vitamin b12",
+    brands: ["Nature Made Vitamin B12", "Spring Valley Vitamin B12"],
+    aliases: ["cobalamin", "methylcobalamin"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Vitamin B12 is not listed in the controlled-substances sources used in this app.",
+      "Lozenges, gummies, and tablets are usually straightforward, but specialty formulas can add other ingredients.",
+      "Use the exact label if the product includes multiple B vitamins or stimulatory additives.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "vitamin b complex",
+    brands: ["Nature Made Super B-Complex", "Nature's Bounty B-Complex"],
+    aliases: ["b-complex"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but B-complex products can vary by formula.",
+    details: [
+      "Vitamin B-complex products are not listed in the controlled-substances sources used in this app.",
+      "Some products add herbs, caffeine, or metabolic blends beyond standard vitamins.",
+      "Match the exact ingredient list if you are relying on a brand-name search.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "calcium",
+    brands: ["Caltrate", "Citracal"],
+    aliases: ["calcium carbonate supplement", "calcium citrate"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Calcium supplements are not listed in the controlled-substances sources used in this app.",
+      "Bone-health products often add vitamin D, magnesium, or zinc, so check the exact formulation.",
+      "Keep the labeled bottle or box when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "magnesium glycinate",
+    brands: ["Nature Made Magnesium Glycinate", "Doctor's Best Magnesium Glycinate"],
+    aliases: ["magnesium supplement"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Magnesium supplements are not listed in the controlled-substances sources used in this app.",
+      "Different magnesium forms are sold for different purposes, so the exact ingredient name can help avoid confusion.",
+      "Combination sleep or stress formulas may add melatonin or herbs, so check the full label.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "zinc",
+    brands: ["Nature Made Zinc", "Zicam Zinc"],
+    aliases: ["zinc supplement"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Zinc is not listed in the controlled-substances sources used in this app.",
+      "Immune-support products can add vitamin C, herbs, or other actives, so check the exact formula.",
+      "Lozenges and tablets are easier to explain when they remain in original packaging.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "iron",
+    brands: ["Slow Fe", "Nature Made Iron"],
+    aliases: ["ferrous sulfate", "ferrous bisglycinate"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Iron supplements are not listed in the controlled-substances sources used in this app.",
+      "Check whether the product is a plain iron supplement or part of a prenatal or multivitamin formula.",
+      "Keep the dosage information visible on the package if possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "omega-3 / fish oil",
+    brands: ["Nature Made Fish Oil", "Nordic Naturals Omega-3", "Kirkland Fish Oil"],
+    aliases: ["fish oil", "omega 3", "dha", "epa"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Fish oil and omega-3 supplements are not listed in the controlled-substances sources used in this app.",
+      "Formulas vary by EPA and DHA content, but that does not usually change the controlled-substance risk.",
+      "Keep softgels or liquid products in their original packaging.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "probiotic",
+    brands: ["Culturelle", "Align", "Florastor"],
+    aliases: ["probiotics", "acidophilus"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Probiotic supplements are not listed in the controlled-substances sources used in this app.",
+      "Strain blends vary a lot, but that does not usually create a controlled-substance issue.",
+      "Heat-sensitive or specialty formulations are best kept in their original packaging.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "melatonin",
+    brands: ["Natrol Melatonin", "OLLY Sleep", "Nature Made Melatonin"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but some sleep supplements add other active ingredients.",
+    details: [
+      "Melatonin is not listed in the controlled-substances sources used in this app.",
+      "Sleep formulas can combine melatonin with magnesium, L-theanine, botanicals, or antihistamines, so check the full ingredient list.",
+      "Brand-name sleep gummies are especially likely to vary by formula.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "collagen peptides",
+    brands: ["Vital Proteins Collagen Peptides", "NeoCell Collagen"],
+    aliases: ["collagen"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Collagen supplements are not listed in the controlled-substances sources used in this app.",
+      "Powders and gummies can include vitamins or beauty-support blends, so the exact label still matters.",
+      "Large tubs are easiest to explain when they stay in original packaging.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "creatine monohydrate",
+    brands: ["Optimum Nutrition Creatine", "MuscleTech Platinum Creatine"],
+    aliases: ["creatine"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Creatine is not listed in the controlled-substances sources used in this app.",
+      "Pre-workout or performance formulas can add caffeine or many other ingredients, so a plain creatine product is easier to match.",
+      "Original packaging helps clarify that the product is a sports supplement.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "turmeric / curcumin",
+    brands: ["Nature Made Turmeric", "Qunol Turmeric"],
+    aliases: ["curcumin", "turmeric supplement"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Turmeric and curcumin supplements are not listed in the controlled-substances sources used in this app.",
+      "Joint and inflammation blends may combine turmeric with black pepper extract or other botanicals.",
+      "If the product is part of a multi-ingredient wellness blend, check the full label.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "coenzyme q10",
+    brands: ["Qunol CoQ10", "Nature Made CoQ10"],
+    aliases: ["coq10", "ubiquinone", "ubiquinol"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "CoQ10 supplements are not listed in the controlled-substances sources used in this app.",
+      "Heart-health formulas can vary in strength and supporting ingredients, but that does not usually change the controlled-substance risk.",
+      "Keep softgels in their labeled package when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "elderberry",
+    brands: ["Sambucol", "Nature's Way Elderberry"],
+    aliases: ["elderberry supplement"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but immune-support blends can vary a lot by formula.",
+    details: [
+      "Elderberry supplements are not listed in the controlled-substances sources used in this app.",
+      "Many elderberry products also add vitamin C, zinc, echinacea, or other ingredients.",
+      "Check the exact label if you are relying on a brand-name search.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "glucosamine / chondroitin",
+    brands: ["Osteo Bi-Flex", "Move Free"],
+    aliases: ["glucosamine", "chondroitin"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Glucosamine and chondroitin supplements are not listed in the controlled-substances sources used in this app.",
+      "Joint-support products can add MSM, turmeric, or collagen, so match the exact formulation.",
+      "Original packaging helps show the ingredient list clearly.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "biotin",
+    brands: ["Nature's Bounty Biotin", "Natrol Biotin"],
+    aliases: ["vitamin b7"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Biotin is not listed in the controlled-substances sources used in this app.",
+      "Hair, skin, and nails products can include many extra ingredients beyond biotin.",
+      "Check the exact formula if the product is sold as a beauty blend rather than plain biotin.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "folic acid",
+    brands: ["Nature Made Folic Acid", "Spring Valley Folic Acid"],
+    aliases: ["vitamin b9", "folate"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Folic acid supplements are not listed in the controlled-substances sources used in this app.",
+      "Many folate products are part of prenatal or B-complex formulas, so check the full label.",
+      "Original packaging helps identify the exact vitamin and strength.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "prenatal multivitamin",
+    brands: ["Nature Made Prenatal", "One A Day Prenatal", "SmartyPants Prenatal"],
+    aliases: ["prenatal vitamin"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but prenatal formulas vary and can contain many active ingredients.",
+    details: [
+      "Prenatal vitamins are not listed in the controlled-substances sources used in this app.",
+      "Formulas commonly include iron, folate, DHA, and other nutrients, so the exact label matters.",
+      "Keep the original package if possible because prenatal products are often multi-ingredient blends.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "electrolyte powder",
+    brands: ["Liquid I.V.", "Pedialyte Powder", "LMNT", "Nuun"],
+    aliases: ["electrolytes", "hydration powder", "nuun hydration", "lmnt electrolytes"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but hydration products can vary by ingredients and purpose.",
+    details: [
+      "Electrolyte powders are not listed in the controlled-substances sources used in this app.",
+      "Sports and hydration mixes can include caffeine, vitamins, amino acids, or herbal additives.",
+      "Single-serve packets are easier to explain when they remain in the original box or wrapper.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "protein powder",
+    brands: ["Optimum Nutrition Gold Standard Whey", "Premier Protein Powder"],
+    aliases: ["whey protein", "protein supplement"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but protein formulas vary widely.",
+    details: [
+      "Protein powders are not listed in the controlled-substances sources used in this app.",
+      "Pre-workout, mass-gainer, or stimulant-containing formulas are different from plain protein products.",
+      "Keep large tubs sealed and labeled when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "ashwagandha",
+    brands: ["Goli Ashwagandha", "Nature's Bounty Ashwagandha"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but herbal formulas should be checked by exact label.",
+    details: [
+      "Ashwagandha is not listed in the controlled-substances sources used in this app.",
+      "Stress and mood blends often combine it with other botanicals, melatonin, or magnesium.",
+      "Use the exact ingredient list instead of relying only on the front-of-package claim.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "berberine",
+    brands: ["Nature's Truth Berberine", "Solaray Berberine"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but specialty metabolic-health formulas should be checked carefully.",
+    details: [
+      "Berberine is not listed in the controlled-substances sources used in this app.",
+      "Products marketed for metabolic or glucose support can include several additional herbal ingredients.",
+      "Keep the original label if you are bringing a concentrated or multi-ingredient formula.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "cranberry",
+    brands: ["AZO Cranberry", "Nature's Bounty Cranberry"],
+    aliases: ["cranberry supplement"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Cranberry supplements are not listed in the controlled-substances sources used in this app.",
+      "Urinary-support blends can add probiotics, vitamin C, or other ingredients, so check the exact formula.",
+      "Original packaging helps show that the product is a supplement rather than a medicine.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "lutein",
+    brands: ["Ocuvite", "PreserVision AREDS 2", "Nature Made Lutein"],
+    aliases: ["eye health supplement"],
+    status: "allowed",
+    label: "Usually allowed, but check the exact formula",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use, but eye-health products often come as complex blends.",
+    details: [
+      "Lutein is not listed in the controlled-substances sources used in this app.",
+      "Eye-health formulas often add zeaxanthin, vitamins, minerals, and AREDS-type combinations.",
+      "Use the exact label if you are matching a brand-name product.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "l-lysine",
+    brands: ["Nature Made L-Lysine", "Nature's Bounty L-Lysine"],
+    aliases: ["lysine"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "L-lysine is not listed in the controlled-substances sources used in this app.",
+      "Simple amino-acid supplements are usually straightforward, but some wellness formulas add many other ingredients.",
+      "Keep supplements in labeled packaging when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "potassium",
+    brands: ["Nature Made Potassium", "Spring Valley Potassium"],
+    aliases: ["potassium supplement"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Potassium supplements are not listed in the controlled-substances sources used in this app.",
+      "Electrolyte blends may combine potassium with sodium, magnesium, and other ingredients.",
+      "Use the exact label if the product is part of a hydration or sports formula.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "vitamin k2",
+    brands: ["Sports Research Vitamin K2", "NOW Vitamin K-2"],
+    aliases: ["menaquinone"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Dietary supplement",
+    summary:
+      "Usually legal to bring into Japan for personal use.",
+    details: [
+      "Vitamin K2 is not listed in the controlled-substances sources used in this app.",
+      "Bone-support products often combine vitamin K2 with vitamin D3, calcium, or magnesium.",
+      "Check the full label if the supplement is sold as a multi-ingredient formula.",
     ],
     sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
   },
@@ -1567,15 +2301,16 @@ function renderResults(query, matches) {
       const resultCardClass = hasVariantMix
         ? drug.status === "allowed" ? "result-card result-card-safe" : "result-card result-card-warning"
         : "result-card";
+      const brandLine = drug.brands.length
+        ? `<p class="aliases">U.S. brand names: ${escapeHtml(drug.brands.join(", "))}</p>`
+        : "";
       
       return `
         <article class="card ${resultCardClass}">
           <div class="result-header">
             <div>
               <h3>${escapeHtml(drug.generic)}</h3>
-              <p class="aliases">
-                U.S. brand names: ${escapeHtml(drug.brands.join(", "))}
-              </p>
+              ${brandLine}
             </div>
             <span class="badge ${drug.status}">${warningIcon} ${escapeHtml(drug.label)}</span>
           </div>
