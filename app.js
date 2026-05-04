@@ -169,6 +169,526 @@ const STANDARD_PRESCRIPTION_LOOKUPS = [
       "Oral diabetes medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
   },
   {
+    generic: "ethinyl estradiol / levonorgestrel",
+    brands: ["Alesse", "Aviane", "Lessina", "Vienva", "Sronyx"],
+    aliases: ["levonorgestrel and ethinyl estradiol"],
+    category: "Birth control pill",
+    ruleDetail:
+      "Standard combined oral contraceptive pills are usually handled under the normal MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the box, blister pack, or pharmacy label so the exact hormone combination is easy to show at customs if needed.",
+    ],
+  },
+  {
+    generic: "ethinyl estradiol / norgestimate",
+    brands: ["Ortho Tri-Cyclen", "Tri-Sprintec", "Sprintec", "Mili", "Estarylla"],
+    aliases: ["norgestimate and ethinyl estradiol"],
+    category: "Birth control pill",
+    ruleDetail:
+      "Standard combined oral contraceptive pills are usually handled under the normal MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Triphasic and monophasic versions can look similar by brand, so keep the exact labeled pack.",
+    ],
+  },
+  {
+    generic: "ethinyl estradiol / drospirenone",
+    brands: ["Yaz", "Yasmin", "Nikki", "Loryna", "Ocella"],
+    aliases: ["drospirenone and ethinyl estradiol"],
+    category: "Birth control pill",
+    ruleDetail:
+      "Standard combined oral contraceptive pills are usually handled under the normal MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Bring the exact labeled pack because drospirenone products come in several similar brand versions.",
+    ],
+  },
+  {
+    generic: "ethinyl estradiol / norethindrone",
+    brands: ["Junel", "Loestrin", "Blisovi Fe", "Hailey Fe", "Microgestin Fe"],
+    aliases: ["norethindrone acetate and ethinyl estradiol"],
+    category: "Birth control pill",
+    ruleDetail:
+      "Standard combined oral contraceptive pills are usually handled under the normal MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Some packs include iron placebo tablets, but the overall product is still usually handled under the standard MHLW rules.",
+    ],
+  },
+  {
+    generic: "norethindrone",
+    brands: ["Camila", "Errin", "Heather", "Incassia", "Norlyda"],
+    aliases: ["norethindrone 0.35 mg", "progestin-only pill", "mini pill"],
+    category: "Birth control pill",
+    ruleDetail:
+      "Progestin-only birth control pills are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the original labeled blister pack because norethindrone is also used in non-contraceptive prescription products.",
+    ],
+  },
+  {
+    generic: "levonorgestrel emergency contraception",
+    brands: ["Plan B One-Step", "Take Action", "My Way", "Aftera", "Option 2"],
+    aliases: ["plan b", "morning after pill", "emergency contraception", "levonorgestrel 1.5 mg"],
+    category: "Emergency contraception",
+    ruleDetail:
+      "Non-controlled emergency contraceptive tablets are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "Keep the exact labeled box because emergency-contraception products can be confused with regular daily pill brands.",
+    ],
+  },
+  {
+    generic: "estradiol",
+    brands: ["Estrace"],
+    aliases: ["oral estradiol", "estradiol tablet"],
+    category: "Hormone therapy medicine",
+    ruleDetail:
+      "Oral estrogen therapy medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because estradiol also comes in patch, cream, and vaginal forms with different quantity rules.",
+    ],
+  },
+  {
+    generic: "progesterone",
+    brands: ["Prometrium"],
+    aliases: ["micronized progesterone", "oral progesterone"],
+    category: "Hormone therapy medicine",
+    ruleDetail:
+      "Oral progesterone medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the labeled package because progesterone also comes in vaginal forms used for fertility treatment.",
+    ],
+  },
+  {
+    generic: "conjugated estrogens",
+    brands: ["Premarin"],
+    category: "Hormone therapy medicine",
+    ruleDetail:
+      "Oral estrogen therapy medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "estradiol / norethindrone acetate",
+    brands: ["Activella", "Mimvey", "Lopreeza"],
+    aliases: ["norethindrone acetate and estradiol"],
+    category: "Hormone therapy medicine",
+    ruleDetail:
+      "Combination menopause hormone-therapy tablets are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Bring the exact labeled pack because similar estrogen-progestin products can be used for different indications.",
+    ],
+  },
+  {
+    generic: "clomiphene",
+    brands: ["Clomid", "Serophene"],
+    aliases: ["clomiphene citrate"],
+    category: "Fertility medicine",
+    ruleDetail:
+      "Ovulation-induction medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "letrozole",
+    brands: ["Femara"],
+    category: "Fertility and hormone therapy medicine",
+    ruleDetail:
+      "Letrozole tablets are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "The same medicine can be used for fertility or other hormone-related treatment, so keep the pharmacy label with it.",
+    ],
+  },
+  {
+    generic: "sildenafil",
+    brands: ["Viagra", "Revatio"],
+    category: "Sexual health medicine",
+    ruleDetail:
+      "Non-controlled erectile-dysfunction medicines are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "Bring the labeled package because sildenafil is sold under different brand names depending on the indication.",
+    ],
+  },
+  {
+    generic: "tadalafil",
+    brands: ["Cialis", "Adcirca"],
+    category: "Sexual health medicine",
+    ruleDetail:
+      "Non-controlled erectile-dysfunction medicines are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "Bring the labeled package because tadalafil is sold under different brand names depending on the indication.",
+    ],
+  },
+  {
+    generic: "fluconazole",
+    brands: ["Diflucan"],
+    category: "Antifungal medicine",
+    ruleDetail:
+      "Oral antifungal medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because fluconazole is used in both short-course and longer-course treatment plans.",
+    ],
+  },
+  {
+    generic: "itraconazole",
+    brands: ["Sporanox"],
+    category: "Antifungal medicine",
+    ruleDetail:
+      "Oral antifungal medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "oral terbinafine",
+    brands: ["Lamisil Tablets"],
+    aliases: ["terbinafine tablets", "terbinafine hydrochloride tablets"],
+    category: "Antifungal medicine",
+    ruleDetail:
+      "Oral antifungal medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "This entry is for tablet treatment, not the common OTC topical Lamisil AT products.",
+    ],
+  },
+  {
+    generic: "nystatin",
+    brands: ["Mycostatin", "Nystop"],
+    aliases: ["oral nystatin", "nystatin suspension", "nystatin tablets"],
+    category: "Antifungal medicine",
+    ruleDetail:
+      "Standard non-controlled antifungal medicines are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "Nystatin also comes in topical forms, so keep the labeled package to show the exact dosage form.",
+    ],
+  },
+  {
+    generic: "tamoxifen",
+    brands: ["Nolvadex", "Soltamox"],
+    category: "Cancer medicine",
+    ruleDetail:
+      "Oral hormone-therapy cancer medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because tamoxifen is typically used as a long-course treatment medicine.",
+    ],
+  },
+  {
+    generic: "anastrozole",
+    brands: ["Arimidex"],
+    category: "Cancer medicine",
+    ruleDetail:
+      "Oral hormone-therapy cancer medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "exemestane",
+    brands: ["Aromasin"],
+    category: "Cancer medicine",
+    ruleDetail:
+      "Oral hormone-therapy cancer medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "imatinib",
+    brands: ["Gleevec"],
+    category: "Cancer medicine",
+    ruleDetail:
+      "Targeted oral cancer medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the original pharmacy label because targeted-therapy tablets are often highly specific to the condition being treated.",
+    ],
+  },
+  {
+    generic: "capecitabine",
+    brands: ["Xeloda"],
+    category: "Cancer medicine",
+    ruleDetail:
+      "Oral chemotherapy medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the medicine in original labeled packaging because cancer-treatment tablets should be clearly identified at customs.",
+    ],
+  },
+  {
+    generic: "diclegis",
+    brands: ["Diclegis", "Bonjesta"],
+    aliases: ["doxylamine pyridoxine", "bonjesta", "pregnancy nausea medicine"],
+    category: "Pregnancy medicine",
+    ruleDetail:
+      "Prescription nausea medicines used in pregnancy are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "This entry is for the pregnancy-nausea combination product, not plain doxylamine sleep tablets.",
+    ],
+  },
+  {
+    generic: "ursodiol",
+    brands: ["Actigall", "Urso Forte"],
+    aliases: ["ursodeoxycholic acid"],
+    category: "Pregnancy and liver medicine",
+    ruleDetail:
+      "Standard non-controlled prescription medicines are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "It is used for more than one condition, so keep the pharmacy label with it.",
+    ],
+  },
+  {
+    generic: "labetalol",
+    brands: ["Trandate"],
+    category: "Pregnancy and blood pressure medicine",
+    ruleDetail:
+      "Blood-pressure medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Labetalol is commonly used in pregnancy, but the same Japan quantity rules still apply.",
+    ],
+  },
+  {
+    generic: "nifedipine",
+    brands: ["Procardia XL", "Adalat CC"],
+    category: "Pregnancy and blood pressure medicine",
+    ruleDetail:
+      "Calcium channel blocker medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because nifedipine comes in immediate-release and extended-release versions.",
+    ],
+  },
+  {
+    generic: "amoxicillin",
+    brands: ["Amoxil", "Moxatag"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "amoxicillin / clavulanate",
+    brands: ["Augmentin"],
+    aliases: ["amoxicillin clavulanate", "co-amoxiclav"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because antibiotic combination products can look similar to plain amoxicillin.",
+    ],
+  },
+  {
+    generic: "azithromycin",
+    brands: ["Zithromax", "Z-Pak"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "doxycycline",
+    brands: ["Doryx", "Vibramycin", "Oracea"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Doxycycline is used for several conditions including infections and acne, so keep the pharmacy label with it.",
+    ],
+  },
+  {
+    generic: "cephalexin",
+    brands: ["Keflex"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "ciprofloxacin",
+    brands: ["Cipro"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "nitrofurantoin",
+    brands: ["Macrobid", "Macrodantin"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because nitrofurantoin comes in different release forms and strengths.",
+    ],
+  },
+  {
+    generic: "metronidazole",
+    brands: ["Flagyl"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "prednisone",
+    brands: ["Rayos"],
+    category: "Steroid medicine",
+    ruleDetail:
+      "Oral corticosteroid medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "prednisolone",
+    brands: ["Orapred", "Prelone", "Millipred"],
+    category: "Steroid medicine",
+    ruleDetail:
+      "Oral corticosteroid medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "hydroxychloroquine",
+    brands: ["Plaquenil"],
+    category: "Autoimmune medicine",
+    ruleDetail:
+      "Standard non-controlled autoimmune medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "levetiracetam",
+    brands: ["Keppra", "Spritam"],
+    category: "Seizure medicine",
+    ruleDetail:
+      "Seizure medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "lamotrigine",
+    brands: ["Lamictal"],
+    category: "Seizure and mood medicine",
+    ruleDetail:
+      "Lamotrigine is usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "It is used for more than one condition, so keep the pharmacy label with it.",
+    ],
+  },
+  {
+    generic: "pregabalin",
+    brands: ["Lyrica"],
+    category: "Nerve pain and seizure medicine",
+    ruleDetail:
+      "Pregabalin is usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "topiramate",
+    brands: ["Topamax", "Trokendi XR", "Qudexy XR"],
+    category: "Seizure and migraine medicine",
+    ruleDetail:
+      "Topiramate is usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "budesonide inhaler",
+    brands: ["Pulmicort Flexhaler"],
+    aliases: ["budesonide inhalation"],
+    category: "Asthma maintenance medicine",
+    ruleDetail:
+      "Inhaled corticosteroid medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep inhalers in original labeled packaging when possible, especially if you are bringing more than one device.",
+    ],
+  },
+  {
+    generic: "budesonide / formoterol",
+    brands: ["Symbicort", "Breyna"],
+    aliases: ["symbicort", "breyna"],
+    category: "Asthma maintenance medicine",
+    ruleDetail:
+      "Combination maintenance inhalers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep inhalers in original labeled packaging when possible because brand and device format matter.",
+    ],
+  },
+  {
+    generic: "fluticasone / salmeterol",
+    brands: ["Advair Diskus", "Advair HFA", "Wixela Inhub"],
+    aliases: ["advair", "wixela"],
+    category: "Asthma maintenance medicine",
+    ruleDetail:
+      "Combination maintenance inhalers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep inhalers in original labeled packaging when possible because dry-powder and aerosol versions differ.",
+    ],
+  },
+  {
+    generic: "meloxicam",
+    brands: ["Mobic"],
+    category: "Pain and inflammation medicine",
+    ruleDetail:
+      "Prescription anti-inflammatory medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "celecoxib",
+    brands: ["Celebrex"],
+    category: "Pain and inflammation medicine",
+    ruleDetail:
+      "Prescription anti-inflammatory medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "diclofenac oral",
+    brands: ["Voltaren", "Zipsor", "Cambia"],
+    aliases: ["diclofenac sodium tablets", "diclofenac potassium"],
+    category: "Pain and inflammation medicine",
+    ruleDetail:
+      "Prescription anti-inflammatory medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "This entry is for oral diclofenac products, not topical Voltaren gel.",
+    ],
+  },
+  {
+    generic: "mesalamine",
+    brands: ["Lialda", "Apriso", "Pentasa", "Delzicol", "Canasa", "Rowasa"],
+    category: "GI medicine",
+    ruleDetail:
+      "Inflammatory-bowel-disease medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because mesalamine comes in tablets, capsules, suppositories, and enemas.",
+    ],
+  },
+  {
+    generic: "dicyclomine",
+    brands: ["Bentyl"],
+    category: "GI medicine",
+    ruleDetail:
+      "IBS and antispasmodic medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "fluoxetine",
+    brands: ["Prozac", "Sarafem"],
+    category: "Mood medicine",
+    ruleDetail:
+      "Most standard antidepressants are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "venlafaxine",
+    brands: ["Effexor XR"],
+    category: "Mood medicine",
+    ruleDetail:
+      "Most standard antidepressants are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "dutasteride",
+    brands: ["Avodart"],
+    category: "Prostate medicine",
+    ruleDetail:
+      "Prostate medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "oxybutynin",
+    brands: ["Ditropan XL", "Oxytrol"],
+    category: "Bladder medicine",
+    ruleDetail:
+      "Bladder and urinary medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because oxybutynin comes in tablet, patch, and other forms.",
+    ],
+  },
+  {
+    generic: "isotretinoin",
+    brands: ["Accutane", "Absorica", "Claravis", "Amnesteem"],
+    category: "Acne medicine",
+    ruleDetail:
+      "Standard non-controlled acne medicines are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "Keep the original labeled packaging because isotretinoin is a tightly managed prescription medicine in many countries.",
+    ],
+  },
+  {
+    generic: "prochlorperazine",
+    brands: ["Compazine"],
+    category: "Nausea medicine",
+    ruleDetail:
+      "Standard non-controlled anti-nausea medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "olanzapine",
+    brands: ["Zyprexa"],
+    category: "Mood and nausea-support medicine",
+    ruleDetail:
+      "Olanzapine is usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "It is used for more than one condition, so keep the pharmacy label with it.",
+    ],
+  },
+  {
     generic: "atorvastatin",
     brands: ["Lipitor"],
     ruleDetail:
@@ -1483,6 +2003,221 @@ const DRUGS = [
     ],
     sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
   },
+  {
+    generic: "etonogestrel / ethinyl estradiol vaginal ring",
+    brands: ["NuvaRing", "EluRyng"],
+    aliases: ["nuvaring", "eluryng", "etonogestrel ring", "birth control ring", "contraceptive ring"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Hormonal contraceptive ring",
+    summary:
+      "Usually legal to bring into Japan for personal use. Vaginal ring contraceptives are usually handled under the normal MHLW personal-use rules for non-controlled medicines.",
+    details: [
+      "NuvaRing and similar products are not listed in the controlled-substances sources used in this app.",
+      "Keep the exact labeled packaging because hormonal ring products are device-like medicines and the product type matters.",
+      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "medroxyprogesterone acetate birth control injection",
+    brands: ["Depo-Provera", "Depo-SubQ Provera 104"],
+    aliases: ["depo provera", "depo-subq provera 104", "depo shot", "birth control shot", "contraceptive injection"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable contraceptive",
+    summary:
+      "Usually legal to bring into Japan for personal use. Injectable contraceptives generally follow MHLW's 1 month injectable-drug limit.",
+    details: [
+      "Depo-Provera is not listed in the controlled-substances sources used in this app.",
+      "Because it is an injectable medicine, the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep the original labeled carton or pharmacy documentation with the syringe or vial when possible.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "levonorgestrel intrauterine device",
+    brands: ["Mirena", "Kyleena", "Skyla", "Liletta"],
+    aliases: ["mirena", "kyleena", "skyla", "liletta", "hormonal iud", "levonorgestrel iud"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Hormonal contraceptive device",
+    summary:
+      "Usually legal to bring into Japan for personal use. Hormonal IUD products are generally handled as non-controlled prescription contraceptive devices when kept in their original labeled packaging.",
+    details: [
+      "Levonorgestrel IUD brands are not listed in the controlled-substances sources used in this app.",
+      "Keep the device sealed in its original labeled package so it is clear this is a prescription contraceptive device, not loose medical equipment.",
+      "If you plan to bring more than 1 device or unusual quantities, check with MHLW before travel.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "estradiol patch",
+    brands: ["Climara", "Vivelle-Dot", "Dotti", "Minivelle", "Alora"],
+    aliases: ["transdermal estradiol", "estradiol transdermal system", "hormone patch"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Hormone therapy patch",
+    summary:
+      "Usually legal to bring into Japan for personal use. Estradiol patches generally follow the MHLW external-use rule.",
+    details: [
+      "Estradiol patches are not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the patches in their original labeled pouches or carton when possible.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "vaginal estradiol",
+    brands: ["Vagifem", "Yuvafem", "Imvexxy", "Estrace Vaginal Cream", "Estring"],
+    aliases: ["estradiol vaginal tablet", "estradiol vaginal cream", "estradiol vaginal ring"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Hormone therapy medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Vaginal estrogen products are generally handled under the normal MHLW quantity rules for non-controlled medicines.",
+    details: [
+      "Vaginal estradiol products are not listed in the controlled-substances sources used in this app.",
+      "The exact form matters because creams, tablets, and rings may be packaged differently.",
+      "Keep the product in original labeled packaging so the dosage form is clear at customs.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "testosterone gel",
+    brands: ["AndroGel", "Testim", "Fortesta", "Vogelxo"],
+    aliases: ["topical testosterone", "transdermal testosterone gel"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Hormone therapy medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical testosterone products generally follow the MHLW external-use rule.",
+    details: [
+      "Testosterone gel is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep pumps or packets in the original labeled box when possible.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "testosterone injection",
+    brands: ["Depo-Testosterone", "Xyosted", "Aveed", "Delatestryl"],
+    aliases: ["testosterone cypionate", "testosterone enanthate", "testosterone undecanoate"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable hormone therapy medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Testosterone injections generally follow MHLW's 1 month injectable-drug limit.",
+    details: [
+      "Testosterone injections are not listed in the controlled-substances sources used in this app.",
+      "Because it is an injectable medicine, the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep vials, syringes, or autoinjectors in original labeled packaging when possible.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "gonadotropin fertility injection",
+    brands: ["Gonal-f", "Follistim AQ", "Menopur", "Ovidrel", "Pregnyl"],
+    aliases: ["fsh injection", "hcg trigger shot", "fertility shot", "ovulation trigger injection"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable fertility medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Fertility injections generally follow MHLW's 1 month injectable-drug limit.",
+    details: [
+      "Common gonadotropin fertility injections are not listed in the controlled-substances sources used in this app.",
+      "Because these are injectable medicines, the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep pens, vials, diluent, and pharmacy labels together when possible.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "enoxaparin",
+    brands: ["Lovenox"],
+    aliases: ["enoxaparin sodium"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Pregnancy and blood thinner medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Enoxaparin injections generally follow MHLW's 1 month injectable-drug limit.",
+    details: [
+      "Enoxaparin is not listed in the controlled-substances sources used in this app.",
+      "Because it is an injectable medicine, the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep syringes and pharmacy documentation in original labeled packaging when possible.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "filgrastim",
+    brands: ["Neupogen", "Nivestym", "Zarxio", "Releuko"],
+    aliases: ["g-csf injection"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Cancer supportive-care injection",
+    summary:
+      "Usually legal to bring into Japan for personal use. Filgrastim injections generally follow MHLW's 1 month injectable-drug limit.",
+    details: [
+      "Filgrastim is not listed in the controlled-substances sources used in this app.",
+      "Because it is an injectable medicine, the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep syringes or injection devices in original labeled packaging when possible.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "pegfilgrastim",
+    brands: ["Neulasta", "Fylnetra", "Fulphila", "Nyvepria", "Udenyca"],
+    aliases: ["long-acting g-csf injection"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Cancer supportive-care injection",
+    summary:
+      "Usually legal to bring into Japan for personal use. Pegfilgrastim injections generally follow MHLW's 1 month injectable-drug limit.",
+    details: [
+      "Pegfilgrastim is not listed in the controlled-substances sources used in this app.",
+      "Because it is an injectable medicine, the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep on-body injector or syringe packaging together with the pharmacy label when possible.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "vaginal progesterone",
+    brands: ["Endometrin", "Crinone"],
+    aliases: ["progesterone vaginal insert", "progesterone vaginal gel"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Pregnancy and fertility medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Vaginal progesterone products are generally handled under the normal MHLW quantity rules for non-controlled medicines.",
+    details: [
+      "Vaginal progesterone is not listed in the controlled-substances sources used in this app.",
+      "Keep the exact labeled packaging because progesterone also comes in oral capsules and other forms.",
+      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "methotrexate",
+    brands: ["Trexall", "Rasuvo", "Otrexup", "Xatmep"],
+    aliases: ["methotrexate injection", "methotrexate tablets"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Autoimmune and cancer medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Oral methotrexate generally follows the normal prescription-drug rule, while self-injection products are safer to treat under MHLW's 1 month injectable limit.",
+    details: [
+      "Methotrexate is not listed in the controlled-substances sources used in this app.",
+      "Tablets are usually handled under the standard MHLW personal-use rules for prescription drugs.",
+      "Self-injection products are safer to treat under the 1 month injectable rule.",
+      "Keep the exact labeled packaging because methotrexate comes in several forms and strengths.",
+    ],
+    sources: MHLW_SOURCES,
+  },
   ...STANDARD_PRESCRIPTION_LOOKUPS.map(createStandardPrescriptionEntry),
   {
     generic: "multivitamin",
@@ -2748,6 +3483,86 @@ const DRUGS = [
       "Athlete's-foot products are often sold in multiple delivery forms, so keep the labeled packaging.",
     ],
     sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "ketoconazole",
+    brands: ["Nizoral"],
+    aliases: ["ketoconazole cream", "ketoconazole shampoo"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical antifungal medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical ketoconazole products generally follow the MHLW external-use rule.",
+    details: [
+      "Ketoconazole topical products are not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the exact labeled packaging because ketoconazole is sold in cream and shampoo forms.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "ciclopirox",
+    brands: ["Penlac", "Loprox"],
+    aliases: ["ciclopirox nail lacquer", "ciclopirox cream", "ciclopirox shampoo"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical antifungal medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Ciclopirox products generally follow the MHLW external-use rule.",
+    details: [
+      "Ciclopirox is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the exact labeled packaging because nail, cream, and shampoo forms are used differently.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "efinaconazole",
+    brands: ["Jublia"],
+    aliases: ["efinaconazole topical solution"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical antifungal medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Nail antifungal solutions generally follow the MHLW external-use rule.",
+    details: [
+      "Efinaconazole is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the bottle in original labeled packaging because nail-fungus products can look like cosmetic liquids.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "nystatin topical",
+    brands: ["Nystop"],
+    aliases: ["nystatin cream", "nystatin ointment", "nystatin powder"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical antifungal medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical nystatin products generally follow the MHLW external-use rule.",
+    details: [
+      "Topical nystatin is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the exact labeled packaging because nystatin also comes in oral forms.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "boric acid vaginal suppositories",
+    brands: ["pH-D", "The Killer"],
+    aliases: ["boric acid suppositories", "vaginal boric acid"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Vaginal health product",
+    summary:
+      "Usually legal to bring into Japan for personal use. Vaginal suppository products are generally handled under the normal MHLW quantity rules for non-controlled medicines.",
+    details: [
+      "Boric acid suppositories are not listed in the controlled-substances sources used in this app.",
+      "Keep the original labeled package because these products can be confused with non-medicine wellness items.",
+      "Check the exact formula if the product includes added oils, herbs, or other active ingredients.",
+    ],
+    sources: MHLW_SOURCES,
   },
   {
     generic: "nicotine",
