@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japan Drug Lookup</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Japan medication travel checker</p>
+        <h1>Check whether a prescription or OTC drug can be brought into Japan</h1>
+        <p class="hero-copy">
+          Search by generic name or common U.S. brand name. Results are based on
+          official Ministry of Health, Labour and Welfare guidance and the
+          Narcotics Control Department's controlled-substance rules.
+        </p>
+      </header>
+
+      <main class="layout">
+        <section class="lookup-panel card">
+          <label class="field-label" for="drug-search">Drug name</label>
+          <div class="search-row">
+            <input
+              id="drug-search"
+              class="search-input"
+              type="search"
+              placeholder="Try Adderall, Vyvanse, Xanax, Sudafed, Tylenol..."
+              autocomplete="off"
+            />
+            <button id="clear-search" class="ghost-button" type="button">
+              Clear
+            </button>
+          </div>
+          <p class="field-hint">
+            Brand formulas can vary. If your package has multiple active
+            ingredients, match the exact ingredient list on the label.
+          </p>
+
+          <div class="chips" aria-label="Quick examples">
+            <button class="chip" type="button" data-query="Adderall">Adderall</button>
+            <button class="chip" type="button" data-query="Vyvanse">Vyvanse</button>
+            <button class="chip" type="button" data-query="Sudafed">Sudafed</button>
+            <button class="chip" type="button" data-query="Xanax">Xanax</button>
+            <button class="chip" type="button" data-query="Tylenol">Tylenol</button>
+            <button class="chip" type="button" data-query="Insulin">Insulin</button>
+          </div>
+        </section>
+
+        <section class="results-panel">
+          <div id="summary-card" class="summary-card card"></div>
+          <div id="results" class="results-grid"></div>
+        </section>
+      </main>
+
+      <section class="rules-grid">
+        <article class="card rule-card">
+          <h2>General MHLW quantity rules</h2>
+          <ul>
+            <li>Prescription drugs: up to 1 month supply without Import Confirmation.</li>
+            <li>Other drugs and quasi-drugs: up to 2 months supply.</li>
+            <li>Injectable drugs and self-injection kits: up to 1 month supply.</li>
+            <li>External-use drugs: up to 24 items per product.</li>
+          </ul>
+        </article>
+
+        <article class="card rule-card">
+          <h2>Controlled substances</h2>
+          <ul>
+            <li>Narcotics and stimulant raw materials need advance permission before travel.</li>
+            <li>Psychotropics follow separate amount thresholds and may need a doctor's certificate.</li>
+            <li>Some substances are prohibited even with a prescription.</li>
+          </ul>
+        </article>
+
+        <article class="card rule-card">
+          <h2>What this app does</h2>
+          <ul>
+            <li>Maps common U.S. brand names to active ingredients.</li>
+            <li>Shows the likely Japan entry status for personal use.</li>
+            <li>Links the decision to official MHLW and NCD source pages.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="card sources-card">
+        <h2>Official sources</h2>
+        <ul class="sources-list">
+          <li>
+            <a
+              href="https://www.mhlw.go.jp/english/policy/health-medical/pharmaceuticals/01.html?lv=true"
+              target="_blank"
+              rel="noreferrer"
+              >MHLW: Information for those who are bringing medicines for personal use into Japan</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.ncd.mhlw.go.jp/en/application2.html"
+              target="_blank"
+              rel="noreferrer"
+              >Narcotics Control Department: Application Guidance</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.ncd.mhlw.go.jp/dl_data/keitai/cotrolled_substances_list20241212%20.pdf"
+              target="_blank"
+              rel="noreferrer"
+              >Controlled Substances List in Japan (12 December 2024 PDF)</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.ncd.mhlw.go.jp/dl_data/keitai/total.pdf"
+              target="_blank"
+              rel="noreferrer"
+              >Psychotropics quantity table (PDF)</a
+            >
+          </li>
+        </ul>
+        <p class="disclaimer">
+          This is a guidance tool, not legal advice. Always confirm the exact
+          active ingredients, strength, dosage form, and quantity on your
+          package before travel.
+        </p>
+      </section>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
