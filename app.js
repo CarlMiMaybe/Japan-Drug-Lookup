@@ -28,6 +28,186 @@ const DRUGS = [
     ],
   },
   {
+    generic: "speed (amphetamine / methamphetamine street term)",
+    brands: ["Speed"],
+    aliases: ["meth", "crystal meth", "ice", "glass"],
+    status: "restricted",
+    label: "Prohibited",
+    category: "Stimulant",
+    summary:
+      "Do not bring products described as speed, meth, or similar stimulant street drugs into Japan. Treat them as prohibited for individual travelers.",
+    details: [
+      "In common usage, speed often refers to amphetamine or methamphetamine-type illegal stimulants.",
+      "The NCD traveler guidance specifically says amphetamine cannot be imported into Japan, even for treatment purposes.",
+      "Methamphetamine and amphetamine are specifically listed in the NCD prohibited-substances guidance.",
+      "If a product uses slang instead of a clear medical ingredient name, do not travel with it until you have official confirmation of the exact substance.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "cannabis (marijuana / THC products)",
+    brands: ["Marijuana", "Cannabis"],
+    aliases: [
+      "weed",
+      "pot",
+      "grass",
+      "ganja",
+      "mary jane",
+      "herb",
+      "bud",
+      "reefer",
+      "hash",
+      "hashish",
+      "dope",
+      "chronic",
+      "kush",
+      "thc",
+      "thc gummies",
+      "edibles",
+      "cannabis oil",
+      "weed pen",
+      "thc vape",
+      "joint",
+    ],
+    status: "restricted",
+    label: "Prohibited",
+    category: "Cannabis / narcotic-related product",
+    summary:
+      "Do not bring marijuana, THC products, or cannabis-derived recreational products into Japan. Treat them as prohibited for individual travelers.",
+    details: [
+      "The NCD travel guidance lists cannabis as a separate controlled category that requires special legal treatment.",
+      "Japan's official CBD guidance says products with delta-9 THC above the residue limit are treated as narcotics from December 12, 2024.",
+      "Because travelers cannot rely on foreign prescriptions, dispensary labels, or U.S. state legality, marijuana and THC products should be treated as not allowed.",
+      "If a product is marketed as CBD but may contain THC, get official confirmation before import rather than assuming it is safe.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "NCD CBD Product Import Guidance", url: "https://www.ncd.mhlw.go.jp/cbd.html" },
+    ],
+  },
+  {
+    generic: "cannabidiol (CBD products)",
+    brands: ["CBD", "CBD Oil"],
+    aliases: ["cannabidiol", "hemp oil", "cbd gummies", "cbd tincture", "cbd vape"],
+    status: "permission",
+    label: "Official confirmation strongly recommended",
+    category: "CBD-related product",
+    summary:
+      "Do not assume a CBD product is allowed in Japan. Products can be treated very differently depending on their ingredients and THC residue, so official confirmation is strongly recommended before import.",
+    details: [
+      "The NCD has a dedicated CBD product import guidance page and offers pre-import confirmation for people who are unsure whether a CBD product is considered a narcotic.",
+      "Japan's official CBD guidance says that from December 12, 2024, products with delta-9 THC above the residue limit are treated as narcotics.",
+      "Even when a product is marketed as CBD in the U.S., travelers should not rely on store labels alone.",
+      "If you plan to bring a CBD product, confirm the exact ingredients and use the NCD's CBD guidance process before travel.",
+    ],
+    sources: [
+      { label: "NCD CBD Product Import Guidance", url: "https://www.ncd.mhlw.go.jp/cbd.html" },
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+    ],
+  },
+  {
+    generic: "tetrahydrocannabinol (THC)",
+    brands: ["THC"],
+    aliases: ["delta-9 thc", "tetrahydrocannabinol", "thc oil", "thc cartridge", "thc edibles"],
+    status: "restricted",
+    label: "Prohibited",
+    category: "Cannabis / narcotic-related product",
+    summary:
+      "Do not bring THC products into Japan. Treat THC oils, edibles, vapes, and similar products as prohibited for individual travelers.",
+    details: [
+      "Japan's official CBD guidance says that from December 12, 2024, products with delta-9 THC above the residue limit are treated as narcotics.",
+      "Travelers should not rely on foreign prescriptions, dispensary labels, or U.S. state legality for THC products.",
+      "This includes common THC formats such as oils, cartridges, gummies, and other edibles.",
+      "If a product is sold as CBD but may contain THC, use the official CBD import guidance before travel instead of assuming it is allowed.",
+    ],
+    sources: [
+      { label: "NCD CBD Product Import Guidance", url: "https://www.ncd.mhlw.go.jp/cbd.html" },
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+    ],
+  },
+  {
+    generic: "cocaine",
+    brands: ["Cocaine"],
+    aliases: ["coke", "crack", "blow", "snow", "nose candy"],
+    status: "restricted",
+    label: "Prohibited",
+    category: "Narcotic",
+    summary:
+      "Do not bring cocaine into Japan. Treat cocaine and cocaine-containing products as prohibited for individual travelers.",
+    details: [
+      "Cocaine is listed as a narcotic in Japan's Controlled Substances List.",
+      "The NCD guidance says controlled narcotics require special legal treatment, and prohibited substances cannot be imported by individual travelers.",
+      "Travelers should not rely on foreign prescriptions, recreational legality elsewhere, or product labeling for cocaine-related products.",
+      "If you are unsure whether a product contains cocaine or a coca-derived controlled ingredient, do not travel with it until you have official confirmation.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "mdma",
+    brands: ["MDMA"],
+    aliases: ["ecstasy", "molly", "e", "x", "mandy"],
+    status: "restricted",
+    label: "Prohibited",
+    category: "Narcotic",
+    summary:
+      "Do not bring MDMA into Japan. Treat MDMA and MDMA-containing products as prohibited for individual travelers.",
+    details: [
+      "MDMA appears in Japan's Controlled Substances List as a controlled narcotic substance.",
+      "The NCD guidance says controlled substances require special legal treatment, and prohibited recreational drugs should be treated as not allowed for travelers.",
+      "Travelers should not rely on foreign legality, festival labels, or informal product descriptions for MDMA-related products.",
+      "If you are unsure whether a pill, powder, or capsule contains MDMA or another controlled stimulant-like substance, do not travel with it until you have official confirmation.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "heroin",
+    brands: ["Heroin"],
+    aliases: ["smack", "horse", "junk", "dope", "black tar"],
+    status: "restricted",
+    label: "Prohibited",
+    category: "Narcotic",
+    summary:
+      "Do not bring heroin into Japan. Treat heroin and heroin-containing products as prohibited for individual travelers.",
+    details: [
+      "The NCD traveler guidance specifically lists heroin among substances that no individual traveler can import or export, even if prescribed elsewhere.",
+      "Heroin is treated as a prohibited substance under Japan's controlled-substance rules.",
+      "Travelers should not rely on foreign prescriptions, recreational legality elsewhere, or product labeling for heroin-related products.",
+      "If you are unsure whether a product contains heroin or another prohibited opioid ingredient, do not travel with it until you have official confirmation.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "opium powder",
+    brands: ["Opium Powder"],
+    aliases: ["powdered opium"],
+    status: "restricted",
+    label: "Prohibited",
+    category: "Opium",
+    summary:
+      "Do not bring opium powder into Japan. It is specifically listed by the NCD as prohibited for individual travelers.",
+    details: [
+      "The NCD traveler guidance specifically lists opium powder among substances that no individual traveler can import or export.",
+      "Because it is specifically called out in the prohibited-substances section, travelers should treat it as not allowed.",
+      "Do not rely on foreign prescriptions or product labels for opium-containing products.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
     generic: "lisdexamfetamine",
     brands: ["Vyvanse", "Elvanse", "Venvanse", "Aduvanz", "Tyvense"],
     aliases: [],
@@ -185,6 +365,25 @@ const DRUGS = [
     ],
     sources: [
       { label: "Controlled Substances List", url: SOURCES.controlledList },
+      { label: "Psychotropics Quantity Table", url: SOURCES.psychotropics },
+    ],
+  },
+  {
+    generic: "buprenorphine",
+    brands: ["Suboxone", "Subutex", "Butrans", "Belbuca", "Sublocade"],
+    aliases: [],
+    status: "permission",
+    label: "Psychotropic threshold applies",
+    category: "Psychotropic",
+    summary:
+      "Usually legal to bring in for personal use at qualifying amounts, but buprenorphine follows Japan's psychotropics rules rather than the narcotics permit rule.",
+    details: [
+      "The NCD guidance specifically lists buprenorphine as a psychotropic in the no-permission category reference.",
+      "If the amount exceeds the psychotropics table limit or the product is injectable, carry a doctor's certificate and follow the NCD psychotropics guidance.",
+      "If you bring more than 1 month supply, MHLW says to contact yakkan@mhlw.go.jp.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
       { label: "Psychotropics Quantity Table", url: SOURCES.psychotropics },
     ],
   },
@@ -352,6 +551,101 @@ const DRUGS = [
       "Tapentadol appears in the Controlled Substances List as a narcotic.",
       "The NCD guidance also names tapentadol as a narcotics example.",
       "Carry the permit and the medicine yourself when entering Japan.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "hydromorphone",
+    brands: ["Dilaudid", "Exalgo"],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Hydromorphone is listed as a narcotic in Japan.",
+    details: [
+      "Hydromorphone appears in the Controlled Substances List as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "Travelers should apply before travel and carry the permit with the medicine at customs.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "oxymorphone",
+    brands: ["Opana", "Opana ER"],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Oxymorphone is listed as a narcotic in Japan.",
+    details: [
+      "Oxymorphone appears in the Controlled Substances List as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "Even extended-release versions still follow the narcotics permit rule.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "methadone",
+    brands: ["Dolophine", "Methadose"],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Methadone is listed as a narcotic in Japan.",
+    details: [
+      "Methadone appears in the Controlled Substances List as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "Travelers should apply early and carry both the medicine and permit themselves at entry.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "meperidine",
+    brands: ["Demerol", "Mepergan"],
+    aliases: ["pethidine"],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Meperidine is treated as a narcotic in Japan.",
+    details: [
+      "The Controlled Substances List includes pethidine as a narcotic reference name.",
+      "Meperidine and pethidine are names for the same controlled opioid medicine.",
+      "Because it is a narcotic, travelers need advance permission before carrying it into Japan.",
+    ],
+    sources: [
+      { label: "NCD Application Guidance", url: SOURCES.ncd },
+      { label: "Controlled Substances List", url: SOURCES.controlledList },
+    ],
+  },
+  {
+    generic: "sufentanil",
+    brands: ["Sublimaze", "Dsuvia"],
+    aliases: [],
+    status: "permission",
+    label: "Advance permission required",
+    category: "Narcotic",
+    summary:
+      "Legal only with advance permission before entering Japan. Sufentanil is listed as a narcotic in Japan.",
+    details: [
+      "The Controlled Substances List includes sufentanil as a narcotic.",
+      "The NCD says narcotics require advance permission before you enter Japan.",
+      "Because sufentanil products are highly controlled, travelers should confirm the exact product details and carry the permit with the medicine.",
     ],
     sources: [
       { label: "NCD Application Guidance", url: SOURCES.ncd },
