@@ -235,6 +235,112 @@ const STANDARD_PRESCRIPTION_LOOKUPS = [
     ],
   },
   {
+    generic: "ulipristal acetate emergency contraception",
+    brands: ["Ella"],
+    aliases: ["ella", "ulipristal", "morning after pill prescription"],
+    category: "Emergency contraception",
+    ruleDetail:
+      "Prescription emergency-contraception tablets are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled box because emergency-contraception products can be confused with other reproductive-health medicines.",
+    ],
+  },
+  {
+    generic: "mifepristone",
+    brands: ["Mifeprex", "Korlym"],
+    category: "Reproductive health medicine",
+    ruleDetail:
+      "Standard non-controlled reproductive-health medicines are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "Keep the exact labeled package because mifepristone products can be used under very different treatment contexts.",
+    ],
+  },
+  {
+    generic: "misoprostol",
+    brands: ["Cytotec"],
+    category: "Reproductive health medicine",
+    ruleDetail:
+      "Standard non-controlled reproductive-health medicines are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "Keep the exact labeled package because misoprostol is used for more than one medical indication.",
+    ],
+  },
+  {
+    generic: "emtricitabine / tenofovir disoproxil fumarate",
+    brands: ["Truvada"],
+    aliases: ["truvada", "prep", "pep", "tdf ftc"],
+    category: "HIV prevention and treatment medicine",
+    ruleDetail:
+      "Standard non-controlled HIV prevention and treatment medicines are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "The same medicine may be used for HIV treatment, PrEP, or PEP, so keep the pharmacy label with it.",
+    ],
+  },
+  {
+    generic: "emtricitabine / tenofovir alafenamide",
+    brands: ["Descovy"],
+    aliases: ["descovy", "taf ftc"],
+    category: "HIV prevention and treatment medicine",
+    ruleDetail:
+      "Standard non-controlled HIV prevention and treatment medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "bictegravir / emtricitabine / tenofovir alafenamide",
+    brands: ["Biktarvy"],
+    aliases: ["biktarvy"],
+    category: "HIV treatment medicine",
+    ruleDetail:
+      "Standard non-controlled HIV treatment medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "dolutegravir",
+    brands: ["Tivicay"],
+    aliases: ["tivicay"],
+    category: "HIV treatment medicine",
+    ruleDetail:
+      "Standard non-controlled HIV treatment medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "dolutegravir / abacavir / lamivudine",
+    brands: ["Triumeq"],
+    aliases: ["triumeq"],
+    category: "HIV treatment medicine",
+    ruleDetail:
+      "Standard non-controlled HIV treatment medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "rilpivirine / emtricitabine / tenofovir alafenamide",
+    brands: ["Odefsey"],
+    aliases: ["odefsey"],
+    category: "HIV treatment medicine",
+    ruleDetail:
+      "Standard non-controlled HIV treatment medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "naltrexone",
+    brands: ["ReVia", "Vivitrol"],
+    category: "Addiction treatment medicine",
+    ruleDetail:
+      "Standard non-controlled addiction-treatment medicines are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "Keep the exact labeled package because naltrexone comes in both oral and injectable forms.",
+    ],
+  },
+  {
+    generic: "acamprosate",
+    brands: ["Campral"],
+    category: "Addiction treatment medicine",
+    ruleDetail:
+      "Standard non-controlled addiction-treatment medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "disulfiram",
+    brands: ["Antabuse"],
+    category: "Addiction treatment medicine",
+    ruleDetail:
+      "Standard non-controlled addiction-treatment medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
     generic: "estradiol",
     brands: ["Estrace"],
     aliases: ["oral estradiol", "estradiol tablet"],
@@ -465,6 +571,7 @@ const STANDARD_PRESCRIPTION_LOOKUPS = [
   {
     generic: "doxycycline",
     brands: ["Doryx", "Vibramycin", "Oracea"],
+    aliases: ["doxy pep", "doxypep"],
     category: "Antibiotic",
     ruleDetail:
       "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
@@ -502,6 +609,17 @@ const STANDARD_PRESCRIPTION_LOOKUPS = [
     category: "Antibiotic",
     ruleDetail:
       "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "benzonatate",
+    brands: ["Tessalon", "Tessalon Perles"],
+    category: "Prescription cough medicine",
+    ruleDetail:
+      "Standard non-controlled prescription cough medicines are usually handled under the standard MHLW personal-use rules.",
+    extraDetails: [
+      "Benzonatate is a prescription cough medicine, not an OTC cough product.",
+      "Keep the exact labeled package because benzonatate can be confused with OTC cough medicines.",
+    ],
   },
   {
     generic: "prednisone",
@@ -1485,7 +1603,7 @@ const DRUGS = [
     details: [
       "Methylphenidate appears in the psychotropics table with a 2.16 g threshold.",
       "The NCD says psychotropics at or below the listed amount do not need permission or a doctor's certificate, unless they are injectable.",
-      "If the supply is more than 1 month, MHLW says to contact yakkan@mhlw.go.jp.",
+      "The NCD psychotropics guidance says that if the supply is more than 1 month, contact yakkan@mhlw.go.jp.",
     ],
     sources: [
       { label: "NCD Application Guidance", url: SOURCES.ncd },
@@ -1523,7 +1641,7 @@ const DRUGS = [
     details: [
       "Alprazolam is listed as a psychotropic in Japan.",
       "The psychotropics quantity table sets the no-permission threshold at 72 mg total.",
-      "If you bring more than 1 month supply, MHLW says to contact yakkan@mhlw.go.jp.",
+      "The NCD psychotropics guidance says that if you bring more than 1 month supply, contact yakkan@mhlw.go.jp.",
     ],
     sources: [
       { label: "Controlled Substances List", url: SOURCES.controlledList },
@@ -1608,8 +1726,8 @@ const DRUGS = [
   },
   {
     generic: "buprenorphine",
-    brands: ["Suboxone", "Subutex", "Butrans", "Belbuca", "Sublocade"],
-    aliases: [],
+    brands: ["Suboxone", "Subutex", "Butrans", "Belbuca", "Sublocade", "Zubsolv", "Bunavail"],
+    aliases: ["buprenorphine naloxone"],
     status: "permission",
     label: "Psychotropic threshold applies",
     category: "Psychotropic",
@@ -1618,7 +1736,7 @@ const DRUGS = [
     details: [
       "The NCD guidance specifically lists buprenorphine as a psychotropic in the no-permission category reference.",
       "If the amount exceeds the psychotropics table limit or the product is injectable, carry a doctor's certificate and follow the NCD psychotropics guidance.",
-      "If you bring more than 1 month supply, MHLW says to contact yakkan@mhlw.go.jp.",
+      "The NCD psychotropics guidance says that if you bring more than 1 month supply, contact yakkan@mhlw.go.jp.",
     ],
     sources: [
       { label: "NCD Application Guidance", url: SOURCES.ncd },
@@ -2526,6 +2644,56 @@ const DRUGS = [
       "Vaginal progesterone is not listed in the controlled-substances sources used in this app.",
       "Keep the exact labeled packaging because progesterone also comes in oral capsules and other forms.",
       "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "cabotegravir",
+    brands: ["Apretude", "Vocabria"],
+    aliases: ["apretude", "vocabria", "long-acting prep"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "HIV prevention and treatment medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Oral cabotegravir generally follows the normal prescription-drug rule, while long-acting injection products are safer to treat under MHLW's 1 month injectable limit.",
+    details: [
+      "Cabotegravir is not listed in the controlled-substances sources used in this app.",
+      "Oral products are usually handled under the standard MHLW personal-use rules for prescription drugs.",
+      "Long-acting injection products are safer to treat under the 1 month injectable rule.",
+      "Keep the exact labeled packaging because oral and injection forms are used differently.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "naloxone",
+    brands: ["Narcan", "Kloxxado"],
+    aliases: ["naloxone nasal spray"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Overdose reversal medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Naloxone rescue products are generally handled under the normal MHLW quantity rules for non-controlled medicines.",
+    details: [
+      "Naloxone is not listed in the controlled-substances sources used in this app.",
+      "Keep the exact labeled packaging because nasal-spray rescue products can look like ordinary sprays.",
+      "If you are carrying multiple units or combination treatment supplies, keep the pharmacy label with them.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "estradiol valerate injection",
+    brands: ["Delestrogen"],
+    aliases: ["depo-estradiol", "estradiol valerate", "estradiol injection"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable hormone therapy medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Estradiol injections generally follow MHLW's 1 month injectable-drug limit.",
+    details: [
+      "Estradiol valerate injection is not listed in the controlled-substances sources used in this app.",
+      "Because it is an injectable medicine, the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep vials, syringes, or pharmacy documentation in original labeled packaging when possible.",
     ],
     sources: MHLW_SOURCES,
   },
