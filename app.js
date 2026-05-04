@@ -867,10 +867,30 @@ function renderResults(query, matches) {
     return;
   }
 
-  resultsContainer.innerHTML = matches
-    .map(
-      (drug) => `
-        <article class="card result-card">
+  // Check if there are variants with different warning levels
+  const hasWarnings = matches.some((m) => m.status === "restricted" || m.status === "permission");
+  const hasMultipleVariants = matches.length > 1;
+  const hasVariantMix = hasMultipleVariants && matches.some((m) => m.status === "allowed") && hasWarnings;
+
+  let html = "";
+
+  if (hasVariantMix) {
+    html += `
+      <article class="card variant-warning-banner">
+        <p>⚠️ <strong>Multiple variants available:</strong> Some versions of this product have different Japan entry rules. Check each variant carefully.</p>
+      </article>
+    `;
+  }
+
+  html += matches
+    .map((drug) => {
+      const warningIcon = drug.status === "restricted" ? "⛔" : drug.status === "permission" ? "⚠️" : "✓";
+      const resultCardClass = hasVariantMix
+        ? drug.status === "allowed" ? "result-card result-card-safe" : "result-card result-card-warning"
+        : "result-card";
+      
+      return `
+        <article class="card ${resultCardClass}">
           <div class="result-header">
             <div>
               <h3>${escapeHtml(drug.generic)}</h3>
@@ -878,7 +898,7 @@ function renderResults(query, matches) {
                 U.S. brand names: ${escapeHtml(drug.brands.join(", "))}
               </p>
             </div>
-            <span class="badge ${drug.status}">${escapeHtml(drug.label)}</span>
+            <span class="badge ${drug.status}">${warningIcon} ${escapeHtml(drug.label)}</span>
           </div>
           <p class="result-meta"><strong>Category:</strong> ${escapeHtml(drug.category)}</p>
           <p>${escapeHtml(drug.summary)}</p>
@@ -895,9 +915,11 @@ function renderResults(query, matches) {
               .join(" · ")}
           </p>
         </article>
-      `
-    )
+      `;
+    })
     .join("");
+
+  resultsContainer.innerHTML = html;
 }
 
 function escapeHtml(value) {
