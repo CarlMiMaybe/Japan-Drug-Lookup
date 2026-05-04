@@ -1387,6 +1387,102 @@ const DRUGS = [
     ],
     sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
   },
+  {
+    generic: "risankizumab",
+    brands: ["Skyrizi"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Risankizumab injections generally follow MHLW's 1 month injectable limit.",
+    details: [
+      "Skyrizi is an injection product, so the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep pens, syringes, and original labeled packaging together when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "adalimumab",
+    brands: ["Humira", "Amjevita", "Hadlima", "Hyrimoz"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Adalimumab injections generally follow MHLW's 1 month injectable limit.",
+    details: [
+      "Adalimumab products are injection medicines, so the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep the exact labeled packaging because biosimilar versions may have different brand names.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "ustekinumab",
+    brands: ["Stelara"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Ustekinumab injections generally follow MHLW's 1 month injectable limit.",
+    details: [
+      "Stelara is an injection product, so the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep syringes or infusion documentation with the original labeled packaging when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "secukinumab",
+    brands: ["Cosentyx"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Secukinumab injections generally follow MHLW's 1 month injectable limit.",
+    details: [
+      "Cosentyx is an injection product, so the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep pens or syringes in the original labeled box when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "guselkumab",
+    brands: ["Tremfya"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Guselkumab injections generally follow MHLW's 1 month injectable limit.",
+    details: [
+      "Tremfya is an injection product, so the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep the exact device and original labeled packaging together when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "ixekizumab",
+    brands: ["Taltz"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Ixekizumab injections generally follow MHLW's 1 month injectable limit.",
+    details: [
+      "Taltz is an injection product, so the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep autoinjectors or syringes in original labeled packaging when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
   ...STANDARD_PRESCRIPTION_LOOKUPS.map(createStandardPrescriptionEntry),
   {
     generic: "multivitamin",
