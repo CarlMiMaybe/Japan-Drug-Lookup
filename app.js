@@ -7,6 +7,368 @@ const SOURCES = {
   psychotropics: "https://www.ncd.mhlw.go.jp/dl_data/keitai/total.pdf",
 };
 
+const MHLW_SOURCES = [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }];
+const STANDARD_PRESCRIPTION_SUMMARY =
+  "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.";
+const STANDARD_PRESCRIPTION_LIMIT_DETAIL =
+  "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.";
+
+function capitalize(value) {
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+function createAllowedEntry({
+  generic,
+  brands = [],
+  aliases = [],
+  label = "Usually allowed",
+  category,
+  summary,
+  details,
+  sources = MHLW_SOURCES,
+}) {
+  return {
+    generic,
+    brands,
+    aliases,
+    status: "allowed",
+    label,
+    category,
+    summary,
+    details,
+    sources,
+  };
+}
+
+function createStandardPrescriptionEntry({
+  generic,
+  brands = [],
+  aliases = [],
+  category = "General prescription medicine",
+  summary = STANDARD_PRESCRIPTION_SUMMARY,
+  ruleDetail,
+  extraDetails = [],
+  label = "Usually allowed",
+  nameInDetail = generic,
+  appendStandardLimit = true,
+}) {
+  return createAllowedEntry({
+    generic,
+    brands,
+    aliases,
+    label,
+    category,
+    summary,
+    details: [
+      `${capitalize(nameInDetail)} is not listed in the controlled-substances sources used in this app.`,
+      ruleDetail,
+      ...extraDetails,
+      ...(appendStandardLimit ? [STANDARD_PRESCRIPTION_LIMIT_DETAIL] : []),
+    ],
+  });
+}
+
+const STANDARD_PRESCRIPTION_LOOKUPS = [
+  {
+    generic: "metformin",
+    brands: ["Glucophage", "Fortamet", "Glumetza"],
+    category: "Diabetes medicine",
+    ruleDetail:
+      "Oral diabetes medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "empagliflozin",
+    brands: ["Jardiance"],
+    category: "Diabetes medicine",
+    ruleDetail:
+      "SGLT2 inhibitor medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "dapagliflozin",
+    brands: ["Farxiga"],
+    category: "Diabetes medicine",
+    ruleDetail:
+      "SGLT2 inhibitor medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "canagliflozin",
+    brands: ["Invokana"],
+    category: "Diabetes medicine",
+    ruleDetail:
+      "SGLT2 inhibitor medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "sitagliptin",
+    brands: ["Januvia"],
+    category: "Diabetes medicine",
+    ruleDetail:
+      "DPP-4 inhibitor medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "linagliptin",
+    brands: ["Tradjenta"],
+    category: "Diabetes medicine",
+    ruleDetail:
+      "DPP-4 inhibitor medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "glipizide",
+    brands: ["Glucotrol", "Glucotrol XL"],
+    category: "Diabetes medicine",
+    ruleDetail:
+      "Sulfonylurea medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "glimepiride",
+    brands: ["Amaryl"],
+    category: "Diabetes medicine",
+    ruleDetail:
+      "Sulfonylurea medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "glyburide",
+    brands: ["Diabeta", "Glynase"],
+    aliases: ["glibenclamide"],
+    category: "Diabetes medicine",
+    ruleDetail:
+      "Sulfonylurea medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "pioglitazone",
+    brands: ["Actos"],
+    category: "Diabetes medicine",
+    ruleDetail:
+      "Oral diabetes medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "atorvastatin",
+    brands: ["Lipitor"],
+    ruleDetail:
+      "Prescription medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "rosuvastatin",
+    brands: ["Crestor"],
+    ruleDetail:
+      "Prescription medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "metoprolol",
+    brands: ["Lopressor", "Toprol-XL"],
+    aliases: ["metoprolol tartrate", "metoprolol succinate"],
+    category: "Heart and blood pressure medicine",
+    ruleDetail:
+      "Beta-blockers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "carvedilol",
+    brands: ["Coreg", "Coreg CR"],
+    category: "Heart and blood pressure medicine",
+    ruleDetail:
+      "Heart-failure and blood-pressure medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "lisinopril",
+    brands: ["Zestril", "Prinivil", "Qbrelis"],
+    category: "Heart and blood pressure medicine",
+    ruleDetail:
+      "ACE inhibitors are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "losartan",
+    brands: ["Cozaar"],
+    category: "Heart and blood pressure medicine",
+    ruleDetail:
+      "Angiotensin receptor blockers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "amlodipine",
+    brands: ["Norvasc"],
+    aliases: ["amlodipine besylate"],
+    category: "Heart and blood pressure medicine",
+    ruleDetail:
+      "Calcium channel blockers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "clopidogrel",
+    brands: ["Plavix"],
+    category: "Heart and blood thinner medicine",
+    ruleDetail:
+      "Antiplatelet medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "apixaban",
+    brands: ["Eliquis"],
+    category: "Heart and blood thinner medicine",
+    ruleDetail:
+      "Blood thinner medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "nitroglycerin",
+    brands: ["Nitrostat", "Nitro-Dur"],
+    aliases: ["glyceryl trinitrate"],
+    category: "Heart medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use under the normal MHLW rules, but the dosage form matters.",
+    ruleDetail:
+      "Sublingual tablets and transdermal products are usually handled under the standard MHLW personal-use rules.",
+    appendStandardLimit: false,
+    extraDetails: [
+      "If you plan to bring more than 1 month supply of prescription product, or many external-use items, check the MHLW quantity rules before travel.",
+    ],
+  },
+  {
+    generic: "levothyroxine",
+    brands: ["Synthroid", "Levoxyl", "Unithroid", "Tirosint"],
+    category: "Thyroid medicine",
+    ruleDetail:
+      "Thyroid medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "alendronate",
+    brands: ["Fosamax", "Binosto"],
+    category: "Bone health medicine",
+    ruleDetail:
+      "Osteoporosis medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "tamsulosin",
+    brands: ["Flomax"],
+    category: "Prostate and urinary medicine",
+    ruleDetail:
+      "BPH and urinary medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "finasteride",
+    brands: ["Proscar", "Propecia"],
+    category: "Prostate medicine",
+    ruleDetail:
+      "Prostate medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "allopurinol",
+    brands: ["Zyloprim", "Aloprim"],
+    category: "Gout medicine",
+    ruleDetail:
+      "Gout medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "gabapentin",
+    brands: ["Neurontin", "Gralise", "Horizant"],
+    category: "Nerve pain medicine",
+    ruleDetail:
+      "Nerve-pain medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "pantoprazole",
+    brands: ["Protonix"],
+    category: "Acid reflux medicine",
+    ruleDetail:
+      "Acid-reflux medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "sertraline",
+    brands: ["Zoloft"],
+    category: "Mood medicine",
+    ruleDetail:
+      "Most standard antidepressants are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "donepezil",
+    brands: ["Aricept"],
+    category: "Memory medicine",
+    ruleDetail:
+      "Memory medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "memantine",
+    brands: ["Namenda"],
+    category: "Memory medicine",
+    ruleDetail:
+      "Memory medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "escitalopram",
+    brands: ["Lexapro"],
+    category: "Mood medicine",
+    ruleDetail:
+      "Most standard antidepressants are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "bupropion",
+    brands: ["Wellbutrin XL", "Wellbutrin SR"],
+    category: "Mood medicine",
+    ruleDetail:
+      "Standard antidepressant medicines are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "buspirone",
+    brands: ["Buspar"],
+    category: "Anxiety medicine",
+    ruleDetail:
+      "Non-controlled anxiety medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "sumatriptan",
+    brands: ["Imitrex", "Tosymra"],
+    category: "Migraine medicine",
+    ruleDetail:
+      "Migraine medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Nasal and injectable forms may need extra attention to quantity and packaging, so keep them labeled.",
+    ],
+  },
+  {
+    generic: "albuterol",
+    brands: ["Ventolin HFA", "ProAir HFA", "Proventil HFA"],
+    aliases: ["salbutamol"],
+    category: "Asthma medicine",
+    ruleDetail:
+      "Inhalers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep inhalers in original packaging when possible, especially if you are bringing more than one device.",
+    ],
+  },
+  {
+    generic: "montelukast",
+    brands: ["Singulair"],
+    category: "Allergy and asthma medicine",
+    ruleDetail:
+      "Allergy and asthma medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "spironolactone",
+    brands: ["Aldactone"],
+    category: "Hormonal and blood pressure medicine",
+    ruleDetail:
+      "It is used for several conditions, but it is usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "valacyclovir",
+    brands: ["Valtrex"],
+    category: "Antiviral medicine",
+    ruleDetail:
+      "Antiviral medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "ondansetron",
+    brands: ["Zofran"],
+    category: "Nausea medicine",
+    ruleDetail:
+      "Nausea medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Oral and dissolvable forms are usually straightforward when kept in labeled packaging.",
+    ],
+  },
+  {
+    generic: "cyclobenzaprine",
+    brands: ["Flexeril", "Amrix"],
+    category: "Muscle spasm medicine",
+    ruleDetail:
+      "Muscle-relaxant medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+];
+
 const DRUGS = [
   {
     generic: "amphetamine mixed salts",
@@ -957,646 +1319,7 @@ const DRUGS = [
     ],
     sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
   },
-  {
-    generic: "metformin",
-    brands: ["Glucophage", "Fortamet", "Glumetza"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Diabetes medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Metformin is not listed in the controlled-substances sources used in this app.",
-      "Oral diabetes medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "empagliflozin",
-    brands: ["Jardiance"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Diabetes medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Empagliflozin is not listed in the controlled-substances sources used in this app.",
-      "SGLT2 inhibitor medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "dapagliflozin",
-    brands: ["Farxiga"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Diabetes medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Dapagliflozin is not listed in the controlled-substances sources used in this app.",
-      "SGLT2 inhibitor medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "canagliflozin",
-    brands: ["Invokana"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Diabetes medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Canagliflozin is not listed in the controlled-substances sources used in this app.",
-      "SGLT2 inhibitor medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "sitagliptin",
-    brands: ["Januvia"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Diabetes medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Sitagliptin is not listed in the controlled-substances sources used in this app.",
-      "DPP-4 inhibitor medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "linagliptin",
-    brands: ["Tradjenta"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Diabetes medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Linagliptin is not listed in the controlled-substances sources used in this app.",
-      "DPP-4 inhibitor medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "glipizide",
-    brands: ["Glucotrol", "Glucotrol XL"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Diabetes medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Glipizide is not listed in the controlled-substances sources used in this app.",
-      "Sulfonylurea medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "glimepiride",
-    brands: ["Amaryl"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Diabetes medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Glimepiride is not listed in the controlled-substances sources used in this app.",
-      "Sulfonylurea medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "glyburide",
-    brands: ["Diabeta", "Glynase"],
-    aliases: ["glibenclamide"],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Diabetes medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Glyburide is not listed in the controlled-substances sources used in this app.",
-      "Sulfonylurea medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "pioglitazone",
-    brands: ["Actos"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Diabetes medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Pioglitazone is not listed in the controlled-substances sources used in this app.",
-      "Oral diabetes medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "atorvastatin",
-    brands: ["Lipitor"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "General prescription medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Atorvastatin is not listed in the controlled-substances sources used in this app.",
-      "Prescription medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "rosuvastatin",
-    brands: ["Crestor"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "General prescription medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Rosuvastatin is not listed in the controlled-substances sources used in this app.",
-      "Prescription medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "metoprolol",
-    brands: ["Lopressor", "Toprol-XL"],
-    aliases: ["metoprolol tartrate", "metoprolol succinate"],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Heart and blood pressure medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Metoprolol is not listed in the controlled-substances sources used in this app.",
-      "Beta-blockers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "carvedilol",
-    brands: ["Coreg", "Coreg CR"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Heart and blood pressure medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Carvedilol is not listed in the controlled-substances sources used in this app.",
-      "Heart-failure and blood-pressure medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "lisinopril",
-    brands: ["Zestril", "Prinivil", "Qbrelis"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Heart and blood pressure medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Lisinopril is not listed in the controlled-substances sources used in this app.",
-      "ACE inhibitors are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "losartan",
-    brands: ["Cozaar"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Heart and blood pressure medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Losartan is not listed in the controlled-substances sources used in this app.",
-      "Angiotensin receptor blockers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "amlodipine",
-    brands: ["Norvasc"],
-    aliases: ["amlodipine besylate"],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Heart and blood pressure medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Amlodipine is not listed in the controlled-substances sources used in this app.",
-      "Calcium channel blockers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "clopidogrel",
-    brands: ["Plavix"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Heart and blood thinner medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Clopidogrel is not listed in the controlled-substances sources used in this app.",
-      "Antiplatelet medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "apixaban",
-    brands: ["Eliquis"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Heart and blood thinner medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Apixaban is not listed in the controlled-substances sources used in this app.",
-      "Blood thinner medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "nitroglycerin",
-    brands: ["Nitrostat", "Nitro-Dur"],
-    aliases: ["glyceryl trinitrate"],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Heart medicine",
-    summary:
-      "Usually legal to bring into Japan for personal use under the normal MHLW rules, but the dosage form matters.",
-    details: [
-      "Nitroglycerin is not listed in the controlled-substances sources used in this app.",
-      "Sublingual tablets and transdermal products are usually handled under the standard MHLW personal-use rules.",
-      "If you plan to bring more than 1 month supply of prescription product, or many external-use items, check the MHLW quantity rules before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "levothyroxine",
-    brands: ["Synthroid", "Levoxyl", "Unithroid", "Tirosint"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Thyroid medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Levothyroxine is not listed in the controlled-substances sources used in this app.",
-      "Thyroid medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "alendronate",
-    brands: ["Fosamax", "Binosto"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Bone health medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Alendronate is not listed in the controlled-substances sources used in this app.",
-      "Osteoporosis medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "tamsulosin",
-    brands: ["Flomax"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Prostate and urinary medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Tamsulosin is not listed in the controlled-substances sources used in this app.",
-      "BPH and urinary medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "finasteride",
-    brands: ["Proscar", "Propecia"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Prostate medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Finasteride is not listed in the controlled-substances sources used in this app.",
-      "Prostate medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "allopurinol",
-    brands: ["Zyloprim", "Aloprim"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Gout medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Allopurinol is not listed in the controlled-substances sources used in this app.",
-      "Gout medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "gabapentin",
-    brands: ["Neurontin", "Gralise", "Horizant"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Nerve pain medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Gabapentin is not listed in the controlled-substances sources used in this app.",
-      "Nerve-pain medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "pantoprazole",
-    brands: ["Protonix"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Acid reflux medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Pantoprazole is not listed in the controlled-substances sources used in this app.",
-      "Acid-reflux medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "sertraline",
-    brands: ["Zoloft"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Mood medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Sertraline is not listed in the controlled-substances sources used in this app.",
-      "Most standard antidepressants are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "donepezil",
-    brands: ["Aricept"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Memory medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Donepezil is not listed in the controlled-substances sources used in this app.",
-      "Memory medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "memantine",
-    brands: ["Namenda"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Memory medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Memantine is not listed in the controlled-substances sources used in this app.",
-      "Memory medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "escitalopram",
-    brands: ["Lexapro"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Mood medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Escitalopram is not listed in the controlled-substances sources used in this app.",
-      "Most standard antidepressants are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "bupropion",
-    brands: ["Wellbutrin XL", "Wellbutrin SR"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Mood medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Bupropion is not listed in the controlled-substances sources used in this app.",
-      "Standard antidepressant medicines are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "buspirone",
-    brands: ["Buspar"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Anxiety medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Buspirone is not listed in the controlled-substances sources used in this app.",
-      "Non-controlled anxiety medicines are usually handled under the standard MHLW personal-use rules.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "sumatriptan",
-    brands: ["Imitrex", "Tosymra"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Migraine medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Sumatriptan is not listed in the controlled-substances sources used in this app.",
-      "Migraine medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "Nasal and injectable forms may need extra attention to quantity and packaging, so keep them labeled.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "albuterol",
-    brands: ["Ventolin HFA", "ProAir HFA", "Proventil HFA"],
-    aliases: ["salbutamol"],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Asthma medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Albuterol is not listed in the controlled-substances sources used in this app.",
-      "Inhalers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "Keep inhalers in original packaging when possible, especially if you are bringing more than one device.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "montelukast",
-    brands: ["Singulair"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Allergy and asthma medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Montelukast is not listed in the controlled-substances sources used in this app.",
-      "Allergy and asthma medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "spironolactone",
-    brands: ["Aldactone"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Hormonal and blood pressure medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Spironolactone is not listed in the controlled-substances sources used in this app.",
-      "It is used for several conditions, but it is usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "valacyclovir",
-    brands: ["Valtrex"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Antiviral medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Valacyclovir is not listed in the controlled-substances sources used in this app.",
-      "Antiviral medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "ondansetron",
-    brands: ["Zofran"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Nausea medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Ondansetron is not listed in the controlled-substances sources used in this app.",
-      "Nausea medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "Oral and dissolvable forms are usually straightforward when kept in labeled packaging.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
-  {
-    generic: "cyclobenzaprine",
-    brands: ["Flexeril", "Amrix"],
-    aliases: [],
-    status: "allowed",
-    label: "Usually allowed",
-    category: "Muscle spasm medicine",
-    summary:
-      "Usually legal to bring into Japan under the normal MHLW prescription-drug quantity rules.",
-    details: [
-      "Cyclobenzaprine is not listed in the controlled-substances sources used in this app.",
-      "Muscle-relaxant medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
-      "If you plan to bring more than 1 month supply, apply for Import Confirmation before travel.",
-    ],
-    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
-  },
+  ...STANDARD_PRESCRIPTION_LOOKUPS.map(createStandardPrescriptionEntry),
   {
     generic: "multivitamin",
     brands: ["Centrum", "One A Day", "Nature Made Multi"],
@@ -2635,6 +2358,166 @@ const DRUGS = [
       "Hydrocortisone is not listed in the controlled-substances sources used in this app.",
       "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
       "Anti-itch and eczema products often come in several strengths and formulations, so keep the original box if possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "clobetasol propionate",
+    brands: ["Clobex", "Olux", "Temovate", "Impoyz"],
+    aliases: ["clobetasol"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical prescription products generally follow the MHLW external-use rule.",
+    details: [
+      "Clobetasol propionate is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Clobetasol products come in cream, ointment, foam, lotion, shampoo, and spray forms, so keep the exact labeled packaging.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "betamethasone dipropionate",
+    brands: ["Diprolene"],
+    aliases: ["betamethasone"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical prescription products generally follow the MHLW external-use rule.",
+    details: [
+      "Betamethasone dipropionate is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Some betamethasone products are combination formulas, so match the exact ingredient and strength on the label.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "mometasone furoate",
+    brands: ["Elocon"],
+    aliases: ["mometasone"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical prescription products generally follow the MHLW external-use rule.",
+    details: [
+      "Mometasone furoate is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the labeled tube, cream, or lotion packaging because topical steroid products often have very similar names.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "fluocinonide",
+    brands: ["Vanos", "Lidex"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical prescription products generally follow the MHLW external-use rule.",
+    details: [
+      "Fluocinonide is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Because potency and dosage forms vary, verify the exact labeled product rather than relying only on the steroid family name.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "desonide",
+    brands: ["DesOwen", "Verdeso"],
+    aliases: [],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical prescription products generally follow the MHLW external-use rule.",
+    details: [
+      "Desonide is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Topical steroids can look similar across strengths and formulations, so keep the exact labeled container when possible.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "halobetasol propionate",
+    brands: ["Ultravate", "Bryhali"],
+    aliases: ["halobetasol"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical prescription products generally follow the MHLW external-use rule.",
+    details: [
+      "Halobetasol propionate is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the original labeled packaging because high-potency topical steroid products often come in several formulations.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "tacrolimus",
+    brands: ["Protopic"],
+    aliases: ["tacrolimus ointment"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical prescription products generally follow the MHLW external-use rule.",
+    details: [
+      "Topical tacrolimus is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Tacrolimus ointment is a non-steroid topical treatment, so keep the exact labeled packaging to distinguish it from oral tacrolimus products.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "pimecrolimus",
+    brands: ["Elidel"],
+    aliases: ["pimecrolimus cream"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical prescription products generally follow the MHLW external-use rule.",
+    details: [
+      "Pimecrolimus is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Pimecrolimus is a non-steroid topical eczema treatment, so keep the exact labeled packaging when traveling.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "crisaborole",
+    brands: ["Eucrisa"],
+    aliases: ["crisaborole ointment"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical prescription products generally follow the MHLW external-use rule.",
+    details: [
+      "Crisaborole is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the exact labeled tube or carton because non-steroid topical eczema products can be easy to confuse by brand name alone.",
+    ],
+    sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
+  },
+  {
+    generic: "ruxolitinib topical",
+    brands: ["Opzelura"],
+    aliases: ["ruxolitinib cream"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical prescription products generally follow the MHLW external-use rule.",
+    details: [
+      "Topical ruxolitinib is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the exact labeled packaging because topical ruxolitinib should be distinguished from oral or other systemic formulations.",
     ],
     sources: [{ label: "MHLW Personal Use Guidance", url: SOURCES.mhlw }],
   },
