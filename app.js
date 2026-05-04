@@ -689,6 +689,334 @@ const STANDARD_PRESCRIPTION_LOOKUPS = [
     ],
   },
   {
+    generic: "simvastatin",
+    brands: ["Zocor"],
+    category: "Heart and cholesterol medicine",
+    ruleDetail:
+      "Cholesterol medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "pravastatin",
+    brands: ["Pravachol"],
+    category: "Heart and cholesterol medicine",
+    ruleDetail:
+      "Cholesterol medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "warfarin",
+    brands: ["Coumadin", "Jantoven"],
+    category: "Heart and blood thinner medicine",
+    ruleDetail:
+      "Blood thinner medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because warfarin tablet strengths often differ by color and dosage.",
+    ],
+  },
+  {
+    generic: "rivaroxaban",
+    brands: ["Xarelto"],
+    category: "Heart and blood thinner medicine",
+    ruleDetail:
+      "Blood thinner medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "dabigatran",
+    brands: ["Pradaxa"],
+    category: "Heart and blood thinner medicine",
+    ruleDetail:
+      "Blood thinner medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "furosemide",
+    brands: ["Lasix"],
+    category: "Heart and fluid medicine",
+    ruleDetail:
+      "Diuretic medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "hydrochlorothiazide",
+    brands: ["Microzide"],
+    aliases: ["hctz"],
+    category: "Blood pressure medicine",
+    ruleDetail:
+      "Diuretic blood-pressure medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "liothyronine",
+    brands: ["Cytomel"],
+    category: "Thyroid medicine",
+    ruleDetail:
+      "Thyroid medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "methimazole",
+    brands: ["Tapazole"],
+    category: "Thyroid medicine",
+    ruleDetail:
+      "Thyroid medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "propylthiouracil",
+    brands: ["PTU"],
+    category: "Thyroid medicine",
+    ruleDetail:
+      "Thyroid medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "trimethoprim / sulfamethoxazole",
+    brands: ["Bactrim", "Septra"],
+    aliases: ["trimethoprim sulfamethoxazole", "co-trimoxazole", "tmp smx"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because this is a combination antibiotic product.",
+    ],
+  },
+  {
+    generic: "clindamycin",
+    brands: ["Cleocin"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "levofloxacin",
+    brands: ["Levaquin"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "penicillin v potassium",
+    brands: ["Pen-Vee K", "Veetids"],
+    aliases: ["penicillin vk"],
+    category: "Antibiotic",
+    ruleDetail:
+      "Standard oral antibiotics are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "carbamazepine",
+    brands: ["Tegretol", "Carbatrol"],
+    category: "Seizure medicine",
+    ruleDetail:
+      "Seizure medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "oxcarbazepine",
+    brands: ["Trileptal", "Oxtellar XR"],
+    category: "Seizure medicine",
+    ruleDetail:
+      "Seizure medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "divalproex sodium",
+    brands: ["Depakote", "Depakote ER"],
+    aliases: ["divalproex", "valproate", "valproic acid"],
+    category: "Seizure and mood medicine",
+    ruleDetail:
+      "Seizure and mood medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep the exact labeled package because valproate products come in several related names and formulations.",
+    ],
+  },
+  {
+    generic: "phenytoin",
+    brands: ["Dilantin", "Phenytek"],
+    category: "Seizure medicine",
+    ruleDetail:
+      "Seizure medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "duloxetine",
+    brands: ["Cymbalta", "Drizalma Sprinkle"],
+    category: "Mood medicine",
+    ruleDetail:
+      "Most standard antidepressants are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "paroxetine",
+    brands: ["Paxil", "Pexeva", "Brisdelle"],
+    category: "Mood medicine",
+    ruleDetail:
+      "Most standard antidepressants are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "mirtazapine",
+    brands: ["Remeron"],
+    category: "Mood medicine",
+    ruleDetail:
+      "Most standard antidepressants are usually handled under the MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "quetiapine",
+    brands: ["Seroquel", "Seroquel XR"],
+    category: "Mood medicine",
+    ruleDetail:
+      "Standard non-controlled mood medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "aripiprazole",
+    brands: ["Abilify"],
+    category: "Mood medicine",
+    ruleDetail:
+      "Standard non-controlled mood medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "atomoxetine",
+    brands: ["Strattera"],
+    category: "ADHD medicine",
+    ruleDetail:
+      "Non-stimulant ADHD medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "guanfacine extended release",
+    brands: ["Intuniv"],
+    aliases: ["guanfacine er"],
+    category: "ADHD medicine",
+    ruleDetail:
+      "Non-stimulant ADHD medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "clonidine extended release",
+    brands: ["Kapvay"],
+    aliases: ["clonidine er"],
+    category: "ADHD medicine",
+    ruleDetail:
+      "Non-stimulant ADHD medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Clonidine is also used for blood pressure, so keep the pharmacy label with it.",
+    ],
+  },
+  {
+    generic: "tiotropium",
+    brands: ["Spiriva HandiHaler", "Spiriva Respimat"],
+    category: "COPD medicine",
+    ruleDetail:
+      "Inhaled maintenance medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep inhalers in original labeled packaging when possible because device format matters.",
+    ],
+  },
+  {
+    generic: "ipratropium",
+    brands: ["Atrovent HFA"],
+    aliases: ["ipratropium inhaler"],
+    category: "COPD and asthma medicine",
+    ruleDetail:
+      "Inhaled maintenance medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "umeclidinium",
+    brands: ["Incruse Ellipta"],
+    category: "COPD medicine",
+    ruleDetail:
+      "Inhaled maintenance medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "fluticasone / umeclidinium / vilanterol",
+    brands: ["Trelegy Ellipta"],
+    aliases: ["trelegy"],
+    category: "COPD medicine",
+    ruleDetail:
+      "Combination maintenance inhalers are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+    extraDetails: [
+      "Keep inhalers in original labeled packaging when possible because multi-ingredient inhalers can look similar by brand family.",
+    ],
+  },
+  {
+    generic: "linaclotide",
+    brands: ["Linzess"],
+    category: "GI medicine",
+    ruleDetail:
+      "Constipation and IBS medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "lubiprostone",
+    brands: ["Amitiza"],
+    category: "GI medicine",
+    ruleDetail:
+      "Constipation and IBS medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "sucralfate",
+    brands: ["Carafate"],
+    category: "GI medicine",
+    ruleDetail:
+      "GI protective medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "balsalazide",
+    brands: ["Colazal"],
+    category: "GI medicine",
+    ruleDetail:
+      "Inflammatory-bowel-disease medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "sulfasalazine",
+    brands: ["Azulfidine"],
+    category: "Autoimmune and GI medicine",
+    ruleDetail:
+      "Standard non-controlled autoimmune and GI medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "azathioprine",
+    brands: ["Imuran", "Azasan"],
+    category: "Autoimmune medicine",
+    ruleDetail:
+      "Standard non-controlled autoimmune medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "mycophenolate",
+    brands: ["CellCept", "Myfortic"],
+    aliases: ["mycophenolate mofetil", "mycophenolic acid"],
+    category: "Autoimmune medicine",
+    ruleDetail:
+      "Standard non-controlled autoimmune medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "oseltamivir",
+    brands: ["Tamiflu"],
+    category: "Antiviral medicine",
+    ruleDetail:
+      "Antiviral medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "febuxostat",
+    brands: ["Uloric"],
+    category: "Gout medicine",
+    ruleDetail:
+      "Gout medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "potassium citrate",
+    brands: ["Urocit-K"],
+    category: "Kidney stone medicine",
+    ruleDetail:
+      "Kidney and urinary medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
+    generic: "tranexamic acid",
+    brands: ["Lysteda"],
+    category: "Women's health medicine",
+    ruleDetail:
+      "Standard non-controlled women's-health medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "aprepitant",
+    brands: ["Emend"],
+    category: "Nausea medicine",
+    ruleDetail:
+      "Standard non-controlled anti-nausea medicines are usually handled under the standard MHLW personal-use rules.",
+  },
+  {
+    generic: "dexamethasone",
+    brands: ["Decadron", "DexPak"],
+    category: "Steroid medicine",
+    ruleDetail:
+      "Corticosteroid medicines are usually handled under the standard MHLW personal-use rules unless a controlled ingredient is involved.",
+  },
+  {
     generic: "atorvastatin",
     brands: ["Lipitor"],
     ruleDetail:
@@ -3561,6 +3889,118 @@ const DRUGS = [
       "Boric acid suppositories are not listed in the controlled-substances sources used in this app.",
       "Keep the original labeled package because these products can be confused with non-medicine wellness items.",
       "Check the exact formula if the product includes added oils, herbs, or other active ingredients.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "latanoprost eye drops",
+    brands: ["Xalatan"],
+    aliases: ["latanoprost ophthalmic"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Eye prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Eye-drop medicines are generally handled under the normal MHLW quantity rules for non-controlled medicines.",
+    details: [
+      "Latanoprost eye drops are not listed in the controlled-substances sources used in this app.",
+      "Keep the bottle in original labeled packaging because eye-drop products can look similar across brands and strengths.",
+      "If you plan to bring more than 1 month supply of prescription eye-drop medicine, apply for Import Confirmation before travel.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "timolol eye drops",
+    brands: ["Timoptic", "Istalol"],
+    aliases: ["timolol ophthalmic"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Eye prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Eye-drop medicines are generally handled under the normal MHLW quantity rules for non-controlled medicines.",
+    details: [
+      "Timolol eye drops are not listed in the controlled-substances sources used in this app.",
+      "Keep the bottle in original labeled packaging because eye-drop products can look similar across brands and strengths.",
+      "If you plan to bring more than 1 month supply of prescription eye-drop medicine, apply for Import Confirmation before travel.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "ciprofloxacin eye drops",
+    brands: ["Ciloxan"],
+    aliases: ["ciprofloxacin ophthalmic"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Eye antibiotic medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Eye-drop antibiotics are generally handled under the normal MHLW quantity rules for non-controlled medicines.",
+    details: [
+      "Ciprofloxacin eye drops are not listed in the controlled-substances sources used in this app.",
+      "Keep the bottle in original labeled packaging because eye-drop antibiotics should be distinguished from oral ciprofloxacin.",
+      "If you plan to bring more than 1 month supply of prescription eye-drop medicine, apply for Import Confirmation before travel.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "ofloxacin ear drops",
+    brands: ["Floxin Otic"],
+    aliases: ["ofloxacin otic"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Ear antibiotic medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Ear-drop antibiotics are generally handled under the normal MHLW quantity rules for non-controlled medicines.",
+    details: [
+      "Ofloxacin ear drops are not listed in the controlled-substances sources used in this app.",
+      "Keep the bottle in original labeled packaging because ear-drop antibiotics should be distinguished from eye or oral forms.",
+      "If you plan to bring more than 1 month supply of prescription drop medicine, apply for Import Confirmation before travel.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "mupirocin",
+    brands: ["Bactroban"],
+    aliases: ["mupirocin ointment"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical antibiotic medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical antibiotic products generally follow the MHLW external-use rule.",
+    details: [
+      "Mupirocin is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the tube in original labeled packaging because topical antibiotics can look similar to steroid creams.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "permethrin topical",
+    brands: ["Elimite", "Nix"],
+    aliases: ["permethrin cream", "permethrin lotion"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical anti-parasite medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical anti-parasite products generally follow the MHLW external-use rule.",
+    details: [
+      "Permethrin topical products are not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the exact labeled packaging because permethrin is sold in different strengths and indications.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
+    generic: "ivermectin topical",
+    brands: ["Soolantra"],
+    aliases: ["ivermectin cream"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Topical prescription medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Topical ivermectin products generally follow the MHLW external-use rule.",
+    details: [
+      "Topical ivermectin is not listed in the controlled-substances sources used in this app.",
+      "MHLW says external-use drugs can usually be brought in up to 24 items per product.",
+      "Keep the exact labeled packaging because topical ivermectin should be distinguished from oral formulations.",
     ],
     sources: MHLW_SOURCES,
   },
