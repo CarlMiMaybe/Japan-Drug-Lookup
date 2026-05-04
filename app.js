@@ -2948,10 +2948,29 @@ function getDetailItemClass(detail) {
     normalized.includes("advance permission") ||
     normalized.includes("stricter rule controls") ||
     normalized.includes("different product") ||
+    normalized.includes("not the same as") ||
+    normalized.includes("do not apply to") ||
     normalized.includes("exact label matters") ||
     normalized.includes("do not rely on the brand name alone")
   ) {
     return "detail-warning";
+  }
+
+  return "";
+}
+
+function getSummaryClass(summary) {
+  const normalized = summary.toLowerCase();
+
+  if (
+    normalized.includes("very important") ||
+    normalized.includes("advance permission") ||
+    normalized.includes("prohibited") ||
+    normalized.includes("do not bring") ||
+    normalized.includes("does not apply to") ||
+    normalized.includes("not the same as")
+  ) {
+    return "summary-warning";
   }
 
   return "";
@@ -3008,6 +3027,8 @@ function renderResults(query, matches) {
       const brandLine = drug.brands.length
         ? `<p class="aliases">U.S. brand names: ${escapeHtml(drug.brands.join(", "))}</p>`
         : "";
+      const summaryClass = getSummaryClass(drug.summary);
+      const summaryClassAttr = summaryClass ? ` class="${summaryClass}"` : "";
       
       return `
         <article class="card ${resultCardClass}">
@@ -3019,7 +3040,7 @@ function renderResults(query, matches) {
             <span class="badge ${drug.status}">${warningIcon} ${escapeHtml(drug.label)}</span>
           </div>
           <p class="result-meta"><strong>Category:</strong> ${escapeHtml(drug.category)}</p>
-          <p>${escapeHtml(drug.summary)}</p>
+          <p${summaryClassAttr}>${escapeHtml(drug.summary)}</p>
           <ul class="detail-list">
             ${drug.details
               .map((detail) => {
