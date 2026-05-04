@@ -2940,6 +2940,23 @@ function renderSummary(query, matches) {
   `;
 }
 
+function getDetailItemClass(detail) {
+  const normalized = detail.toLowerCase();
+
+  if (
+    normalized.includes("may need advance confirmation") ||
+    normalized.includes("advance permission") ||
+    normalized.includes("stricter rule controls") ||
+    normalized.includes("different product") ||
+    normalized.includes("exact label matters") ||
+    normalized.includes("do not rely on the brand name alone")
+  ) {
+    return "detail-warning";
+  }
+
+  return "";
+}
+
 function renderResults(query, matches) {
   if (!query) {
     resultsContainer.innerHTML = `
@@ -3004,7 +3021,13 @@ function renderResults(query, matches) {
           <p class="result-meta"><strong>Category:</strong> ${escapeHtml(drug.category)}</p>
           <p>${escapeHtml(drug.summary)}</p>
           <ul class="detail-list">
-            ${drug.details.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}
+            ${drug.details
+              .map((detail) => {
+                const detailClass = getDetailItemClass(detail);
+                const classAttr = detailClass ? ` class="${detailClass}"` : "";
+                return `<li${classAttr}>${escapeHtml(detail)}</li>`;
+              })
+              .join("")}
           </ul>
           <p class="source-line">
             Sources:
