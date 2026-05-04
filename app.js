@@ -2930,6 +2930,23 @@ const DRUGS = [
     sources: MHLW_SOURCES,
   },
   {
+    generic: "epinephrine auto-injector",
+    brands: ["EpiPen", "EpiPen Jr", "Auvi-Q", "Adrenaclick"],
+    aliases: ["epinephrine", "adrenaline auto-injector", "anaphylaxis injector"],
+    status: "allowed",
+    label: "Usually allowed",
+    category: "Injectable medicine",
+    summary:
+      "Usually legal to bring into Japan for personal use. Epinephrine auto-injectors generally follow MHLW's 1 month injectable-drug limit.",
+    details: [
+      "Epinephrine auto-injectors are not listed in the controlled-substances sources used in this app.",
+      "Because it is an injectable medicine, the 1 month injectable rule is the safer default.",
+      "For more than 1 month supply of injectable medicine, apply for Import Confirmation before travel.",
+      "Keep the auto-injector carton, prescription label, and trainer device separate from the real injector when possible.",
+    ],
+    sources: MHLW_SOURCES,
+  },
+  {
     generic: "estradiol valerate injection",
     brands: ["Delestrogen"],
     aliases: ["depo-estradiol", "estradiol valerate", "estradiol injection"],
