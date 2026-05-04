@@ -150,9 +150,9 @@ body {
   color: var(--muted);
   font-size: 0.9rem;
   font-style: italic;
-  margin: 12px 0 0;
-  text-align: center;
-  padding: 8px 0;
+  margin: 10px 0 6px;
+  text-align: left;
+  padding: 2px 2px 0;
   animation: pulse-hint 2s ease-in-out infinite;
 }
 
@@ -357,5 +357,10 @@ body {
 
   .ghost-button {
     height: 48px;
+  }
+
+  .search-results-hint {
+    font-size: 0.85rem;
+    margin: 8px 0 4px;
   }
 }
