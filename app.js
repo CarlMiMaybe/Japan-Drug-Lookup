@@ -1,6 +1,6 @@
 const SOURCES = {
   mhlw:
-    "https://www.mhlw.go.jp/english/policy/health-medical/pharmaceuticals/01.html?lv=true",
+    "https://www.mhlw.go.jp/english/policy/health-medical/pharmaceuticals/",
   ncd: "https://www.ncd.mhlw.go.jp/en/application2.html",
   controlledList:
     "https://www.ncd.mhlw.go.jp/dl_data/keitai/cotrolled_substances_list20241212%20.pdf",
