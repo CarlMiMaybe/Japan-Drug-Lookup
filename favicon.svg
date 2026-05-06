@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Japan Drug Lookup favicon</title>
+  <rect width="64" height="64" rx="16" fill="#f4eee3" />
+  <circle cx="32" cy="20" r="10" fill="#ad3434" opacity="0.9" />
+  <g transform="rotate(-18 32 40)">
+    <rect x="14" y="30" width="36" height="16" rx="8" fill="#ffffff" stroke="#1f1916" stroke-width="3" />
+    <path d="M32 30v16" stroke="#1f1916" stroke-width="3" />
+    <path d="M17 38h12" stroke="#ad3434" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>
